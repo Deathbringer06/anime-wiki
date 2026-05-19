@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Форум — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Дополнительные микростили специально для элементов форума */
+        .forum-btn-container {
+            padding: 0 var(--padding);
+            margin-bottom: 8px;
+        }
+        .action-btn {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .action-btn:active {
+            transform: scale(0.97);
+            background-color: #673AB7;
+        }
+        .thread-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск по форуму..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="anime.html">Каталог Аниме</a></li>
+                <li><a href="manga.html">Каталог Манги</a></li>
+                <li><a href="characters.html">Персонажи</a></li>
+                <li><a href="seiyuu.html">Сэйю</a></li>
+                <li><a href="studios.html">Студии</a></li>
+                <li><a href="forum.html" class="active">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Форум</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Обсуждения и форум</h1>
+
+        <div class="forum-btn-container">
+            <button class="action-btn" onclick="window.showToast('Функция создания тем будет доступна после авторизации!')">
+                ✍️ Создать новую тему
+            </button>
+        </div>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">💬 Все ветки</button>
+                <button class="chip">🔥 Популярное</button>
+                <button class="chip">🎬 Обсуждение серий</button>
+                <button class="chip">🎨 Творчество</button>
+                <button class="chip">⚙️ Работа сайта</button>
+            </div>
+        </section>
+
+        <section class="news-list" style="margin-bottom: 40px;">
+            
+            <article class="news-item-preview">
+                <span class="news-date">Раздел: Обсуждение серий</span>
+                <h3>Финал 3 сезона «Безработного» — оправдал ли ожидания?</h3>
+                <p>Ребята, делимся впечатлениями от финальной серии. Как вам анимация ключевой битвы? Мне показалось, что...</p>
+                <div class="thread-meta">
+                    <span>Ответов: 142</span>
+                    <span>Активность: 2 мин. назад</span>
+                </div>
+                <a href="#" class="stretched-link" onclick="window.showToast('Загрузка обсуждения...')">Открыть ветку</a>
+            </article>
+
+            <article class="news-item-preview">
+                <span class="news-date">Раздел: Творчество</span>
+                <h3>Мой фан-арт по Магической Битве (Годжо Сатору)</h3>
+                <p>Привет всем! Оцените мой свежий диджитал-арт, рисовал около 12 часов в Procreate. Критика приветствуется...</p>
+                <div class="thread-meta">
+                    <span>Ответов: 38</span>
+                    <span>Активность: 15 мин. назад</span>
+                </div>
+                <a href="#" class="stretched-link" onclick="window.showToast('Загрузка обсуждения...')">Открыть ветку</a>
+            </article>
+
+            <article class="news-item-preview">
+                <span class="news-date">Раздел: Популярное</span>
+                <h3>Посоветуйте качественную романтику без штампов</h3>
+                <p>Хочется посмотреть что-то глубокое, где персонажи ведут себя как взрослые люди, а не краснеют 3 сезона подряд при виде...</p>
+                <div class="thread-meta">
+                    <span>Ответов: 512</span>
+                    <span>Активность: 1 час назад</span>
+                </div>
+                <a href="#" class="stretched-link" onclick="window.showToast('Загрузка обсуждения...')">Открыть ветку</a>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="forum.html" class="active">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>

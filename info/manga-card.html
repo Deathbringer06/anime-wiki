@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Берсерк (Манга) — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Использование переиспользуемых микростилей из нашего UI Kit карточек */
+        .details-poster-wrapper {
+            width: 100%;
+            padding: 0 var(--padding);
+            margin-top: 12px;
+        }
+        .details-poster {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, var(--coral), var(--pink));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .meta-info-block {
+            background-color: var(--surface);
+            margin: 0 var(--padding);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--surface-variant);
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+        .meta-item:not(:last-child) {
+            border-right: 1px solid var(--surface-variant);
+        }
+        .meta-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .meta-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .anime-description {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .action-button-group {
+            padding: 0 var(--padding);
+            display: flex;
+            gap: 8px;
+        }
+        .btn-primary {
+            flex: 2;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-secondary {
+            flex: 1;
+            background-color: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--surface-variant);
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-primary:active, .btn-secondary:active {
+            transform: scale(0.96);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск на вики..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" style="gap: 16px;">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — 
+            <a href="../catalog/manga.html" style="color: var(--purple-dark);">Каталог манги</a> — 
+            <span>Берсерк</span>
+        </div>
+
+        <div class="details-poster-wrapper">
+            <div class="details-poster">
+                📖 Обложка / Баннер манги
+            </div>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 0; margin-top: 4px;">Берсерк / Berserk</h1>
+
+        <div class="meta-info-block">
+            <div class="meta-item">
+                <span class="meta-value">⭐️ 9.6</span>
+                <span class="meta-label">Рейтинг</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">42 т.</span>
+                <span class="meta-label">Тома</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Онгоинг</span>
+                <span class="meta-label">Статус</span>
+            </div>
+        </div>
+
+        <div class="action-button-group">
+            <button class="btn-primary" onclick="window.showToast('Манга добавлена в список «Читаю»!')">📖 Хочу читать</button>
+            <button class="btn-secondary" onclick="window.showToast('Добавлено в Избранное ❤️')">❤️</button>
+        </div>
+
+        <article class="anime-description">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Аннотация</h2>
+            <p>
+                Легендарное темное фэнтези, созданное Кентаро Миурой. История рассказывает о жизни Гатса, прирожденного наемника, известного как Черный Мечник. Проклятый зловещим клеймом, которое привлекает к нему демонов каждую ночь, Гатс путешествует по раздираемому войнами миру в поисках мести своему бывшему командиру и другу Гриффиту, который предал отряд соратников ради божественного могущества.
+            </p>
+        </article>
+
+        <section class="section-container" style="margin-top: 12px; margin-bottom: 30px;">
+            <h2 class="section-title">Связанные страницы</h2>
+            <div class="chip-row">
+                <a href="character-card.html" class="chip">👤 Гатс (Персонаж)</a>
+                <a href="anime-card.html" class="chip">🎬 Аниме-адаптация (1997)</a>
+                <a href="wiki-article.html" class="chip">📝 Кентаро Миура (Автор)</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права Copyleft.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>

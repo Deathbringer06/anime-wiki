@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Карточка студии: MAPPA — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Микростили для страницы детальной карточки студии */
+        .details-poster-wrapper {
+            width: 100%;
+            padding: 0 var(--padding);
+            margin-top: 12px;
+        }
+        .details-poster {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, var(--purple-dark), var(--accent));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .meta-info-block {
+            background-color: var(--surface);
+            margin: 0 var(--padding);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--surface-variant);
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+        .meta-item:not(:last-child) {
+            border-right: 1px solid var(--surface-variant);
+        }
+        .meta-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .meta-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .studio-description {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .action-button-group {
+            padding: 0 var(--padding);
+            display: flex;
+        }
+        .btn-primary-full {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .btn-primary-full:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск студий..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" style="gap: 20px;">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — 
+            <a href="../catalog/studios.html" style="color: var(--purple-dark);">Студии</a> — 
+            <span>MAPPA</span>
+        </div>
+
+        <div class="details-poster-wrapper">
+            <div class="details-poster">
+                🏢 Логотип / Ключевой арт студии
+            </div>
+        </div>
+
+        <div style="padding: 0 var(--padding);">
+            <h1 style="font-size: 24px; font-weight: 800; line-height: 1.2;">Studio MAPPA</h1>
+            <p style="font-size: 14px; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Maruyama Animation Produce Project Association</p>
+        </div>
+
+        <div class="meta-info-block">
+            <div class="meta-item">
+                <span class="meta-value">90+</span>
+                <span class="meta-label">Тайтлов</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">2011</span>
+                <span class="meta-label">Основана</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Экшен / Драма</span>
+                <span class="meta-label">Профиль</span>
+            </div>
+        </div>
+
+        <div class="action-button-group">
+            <button class="btn-primary-full" onclick="window.showToast('Студия добавлена в отслеживаемые! 🌟')">
+                ⭐ В избранные студии
+            </button>
+        </div>
+
+        <article class="studio-description">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">История и стиль студии</h2>
+            <p>
+                Японская анимационная студия, основанная Масао Маруямой, бывшим продюсером и сооснователем легендарной студии Madhouse. MAPPA ворвалась в индустрию с амбициозными проектами и быстро заслужила репутацию студии, способной создавать комплексный экшен с невероятно сложной и динамичной 3D/2D графикой. Студия известна тем, что берётся за производство культовых и трудоёмких франшиз, обеспечивая высочайшую планку детализации боёв и кинематографичную режиссуру.
+            </p>
+        </article>
+
+        <section class="section-container" style="margin-top: 8px; margin-bottom: 30px;">
+            <h2 class="section-title">Популярные релизы студии</h2>
+            <div class="chip-row">
+                <a href="anime-card.html" class="chip">🎬 Магическая Битва</a>
+                <a href="anime-card.html" class="chip">⚔️ Атака Титанов: Финал</a>
+                <a href="anime-card.html" class="chip">🪚 Человек-Бензопила</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>

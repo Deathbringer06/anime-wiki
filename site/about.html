@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>О проекте — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Дополнительные стили для формы обратной связи */
+        .about-text {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .about-text p {
+            margin-bottom: 12px;
+        }
+        .feedback-form {
+            background-color: var(--surface);
+            border: 1px solid var(--surface-variant);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin: 0 var(--padding) 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .form-input, .form-textarea {
+            width: 100%;
+            background-color: var(--background);
+            border: 1px solid var(--surface-variant);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            font-size: 15px;
+            color: var(--text);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--purple);
+            box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.15);
+        }
+        .form-textarea {
+            resize: none;
+            height: 100px;
+        }
+        .btn-submit {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .btn-submit:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск по сайту..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="about.html" class="active">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>О проекте</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">О проекте AnimeWiki</h1>
+
+        <section class="about-text">
+            <p>
+                <strong>AnimeWiki</strong> — это современная мобильная энциклопедия-вики, созданная специально для фанатов японской поп-культуры, аниме и манги. Наша цель — предоставить быстрый, удобный и интуитивно понятный доступ к базе данных тайтлов, персонажей, актеров озвучки (сэйю) и студий прямо с экрана вашего смартфона.
+            </p>
+            <p>
+                Интерфейс спроектирован по современным стандартам мобильной адаптивности, поддерживает комфортную навигацию одной рукой ("зону большого пальца") и оптимизирован для быстрой загрузки даже при слабом интернет-соединении.
+            </p>
+        </section>
+
+        <section class="section-container">
+            <h2 class="section-title" style="padding-left: 0; margin-bottom: 12px;">Обратная связь</h2>
+            
+            <form class="feedback-form" onsubmit="event.preventDefault(); window.showToast('Спасибо! Ваше сообщение успешно отправлено. ✉️'); this.reset();">
+                <div class="form-group">
+                    <label for="emailInput">Ваш Email</label>
+                    <input type="email" id="emailInput" class="form-input" placeholder="example@mail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="messageInput">Сообщение</label>
+                    <textarea id="messageInput" class="form-textarea" placeholder="Ваши предложения или баг-репорты..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">🚀 Отправить сообщение</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="about.html" class="active">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>

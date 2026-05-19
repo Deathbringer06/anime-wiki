@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Карточка сэйю: Мамору Мияно — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Микростили для страницы портрета сэйю */
+        .seiyuu-avatar-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0 var(--padding);
+            margin-top: 12px;
+        }
+        .seiyuu-avatar {
+            width: 60%;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 32px;
+            box-shadow: 0 6px 16px rgba(126, 87, 194, 0.15);
+            border: 4px solid var(--surface);
+        }
+        .meta-info-block {
+            background-color: var(--surface);
+            margin: 0 var(--padding);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--surface-variant);
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+        .meta-item:not(:last-child) {
+            border-right: 1px solid var(--surface-variant);
+        }
+        .meta-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .meta-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .seiyuu-bio {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .action-button-group {
+            padding: 0 var(--padding);
+            display: flex;
+        }
+        .btn-primary-full {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .btn-primary-full:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск сэйю..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" style="gap: 20px;">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — 
+            <a href="../catalog/seiyuu.html" style="color: var(--purple-dark);">Сэйю</a> — 
+            <span>Мамору Мияно</span>
+        </div>
+
+        <div class="seiyuu-avatar-wrapper">
+            <div class="seiyuu-avatar">
+                🎙️
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 0 var(--padding);">
+            <h1 style="font-size: 24px; font-weight: 800; line-height: 1.2;">Мамору Мияно</h1>
+            <p style="font-size: 14px; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Япония, префектура Сайтама</p>
+        </div>
+
+        <div class="meta-info-block">
+            <div class="meta-item">
+                <span class="meta-value">250+</span>
+                <span class="meta-label">Ролей</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Сёнен</span>
+                <span class="meta-label">Жанр</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">4 премии</span>
+                <span class="meta-label">Награды</span>
+            </div>
+        </div>
+
+        <div class="action-button-group">
+            <button class="btn-primary-full" onclick="window.showToast('Подписка на уведомления об актере оформлена! 🔔')">
+                🔔 Следить за обновлениями
+            </button>
+        </div>
+
+        <article class="seiyuu-bio">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Краткая биография</h2>
+            <p>
+                Один из самых знаменитых, востребованных и харизматичных японских сэйю, а также успешный певец и актер театра. Родился 8 июня 1983 года. Начал карьеру в начале 2000-х годов и мгновенно завоевал всемирное признание благодаря озвучке Ягами Лайта в культовом аниме «Тетрадь смерти», за которую был номинирован на престижную премию Seiyu Awards. Известен невероятным эмоциональным диапазоном: способен идеально отыгрывать как хладнокровных гениев, так и эксцентричных безумцев или комичных персонажей.
+            </p>
+        </article>
+
+        <section class="section-container" style="margin-top: 8px; margin-bottom: 30px;">
+            <h2 class="section-title">Знаменитые роли сэйю</h2>
+            <div class="chip-row">
+                <a href="character-card.html" class="chip">🍎 Ягами Лайт (Тетрадь Смерти)</a>
+                <a href="character-card.html" class="chip">🥼 Окабэ Ринтаро (Врата Штейна)</a>
+                <a href="character-card.html" class="chip">🩹 Дазай Осаму (Бродячие псы)</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Аниме Студии — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск студий..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="anime.html">Каталог Аниме</a></li>
+                <li><a href="manga.html">Каталог Манги</a></li>
+                <li><a href="characters.html">Персонажи</a></li>
+                <li><a href="seiyuu.html">Сэйю</a></li>
+                <li><a href="studios.html" class="active">Студии</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Студии</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Аниме-студии</h1>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">🏢 Все студии</button>
+                <button class="chip">🔥 Популярные</button>
+                <button class="chip">⏳ Ветераны индустрии</button>
+                <button class="chip">🎨 Известные графикой</button>
+                <button class="chip">🚀 Новое поколение</button>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <div class="card-grid">
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Логотип</div>
+                    <div class="card-info">
+                        <h3>MAPPA</h3>
+                        <span class="card-badge">Магическая битва, Титаны</span>
+                    </div>
+                    <a href="../info/studio-card.html" class="card-link" aria-label="Открыть студию MAPPA"></a>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Логотип</div>
+                    <div class="card-info">
+                        <h3>ufotable</h3>
+                        <span class="card-badge">Клинок рассекающий демонов</span>
+                    </div>
+                    <a href="../info/studio-card.html" class="card-link" aria-label="Открыть студию ufotable"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Логотип</div>
+                    <div class="card-info">
+                        <h3>Madhouse</h3>
+                        <span class="card-badge">Тетрадь смерти, Ванпанчмен</span>
+                    </div>
+                    <a href="../info/studio-card.html" class="card-link" aria-label="Открыть студию Madhouse"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Логотип</div>
+                    <div class="card-info">
+                        <h3>Studio Ghibli</h3>
+                        <span class="card-badge">Шедевры Миядзаки</span>
+                    </div>
+                    <a href="../info/studio-card.html" class="card-link" aria-label="Открыть студию Ghibli"></a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>

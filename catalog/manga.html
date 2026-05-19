@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Каталог Манги — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск манги..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="anime.html">Каталог Аниме</a></li>
+                <li><a href="manga.html" class="active">Каталог Манги</a></li>
+                <li><a href="characters.html">Персонажи</a></li>
+                <li><a href="seiyuu.html">Сэйю</a></li>
+                <li><a href="studios.html">Студии</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Каталог манги</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Каталог Манги</h1>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">📖 Вся манга</button>
+                <button class="chip">🇯🇵 Манга</button>
+                <button class="chip">🇰🇷 Манхва</button>
+                <button class="chip">🇨🇳 Маньхуа</button>
+                <button class="chip">📑 Сингл</button>
+                <button class="chip">🎨 Цветная</button>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <div class="card-grid">
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Обложка</div>
+                    <div class="card-info">
+                        <h3>Берсерк</h3>
+                        <span class="card-badge">Манга</span>
+                    </div>
+                    <a href="../info/manga-card.html" class="card-link" aria-label="Открыть Берсерк"></a>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Обложка</div>
+                    <div class="card-info">
+                        <h3>Поднятие уровня в одиночку</h3>
+                        <span class="card-badge">Манхва</span>
+                    </div>
+                    <a href="../info/manga-card.html" class="card-link" aria-label="Открыть Поднятие уровня в одиночку"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Обложка</div>
+                    <div class="card-info">
+                        <h3>Ван Пис</h3>
+                        <span class="card-badge">Манга</span>
+                    </div>
+                    <a href="../info/manga-card.html" class="card-link" aria-label="Открыть Ван Пис"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Обложка</div>
+                    <div class="card-info">
+                        <h3>Магическая битва</h3>
+                        <span class="card-badge">Манга</span>
+                    </div>
+                    <a href="../info/manga-card.html" class="card-link" aria-label="Открыть Магическая битва"></a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>

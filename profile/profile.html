@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Личный Профиль — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        .profile-hero {
+            background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+            color: white;
+            padding: 30px var(--padding);
+            text-align: center;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            margin-bottom: 20px;
+        }
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            border: 3px solid white;
+        }
+        .profile-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .profile-status {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+        .sub-tabs {
+            display: flex;
+            gap: 8px;
+            padding: 0 var(--padding);
+            overflow-x: auto;
+            margin-bottom: 16px;
+            scrollbar-width: none;
+        }
+        .sub-tabs::-webkit-scrollbar {
+            display: none;
+        }
+        .tab-btn {
+            background-color: var(--surface);
+            border: 1px solid var(--surface-variant);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .tab-btn.active {
+            background-color: var(--purple-dark);
+            color: white;
+            border-color: var(--purple-dark);
+        }
+        .empty-msg {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 40px var(--padding);
+            font-size: 14px;
+        }
+        .favorite-section {
+            display: none;
+        }
+        .favorite-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск на вики..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="profile.html" class="active">Профиль</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="profile-hero">
+            <div class="profile-avatar">👤</div>
+            <h2 class="profile-name">Отаку-Профиль</h2>
+            <div class="profile-status">Стаж на Wiki: 4-й семестр 🎓</div>
+        </section>
+
+        <div class="sub-tabs">
+            <button class="tab-btn active" onclick="switchProfileTab('anime-fav', this)">🎬 Аниме</button>
+            <button class="tab-btn" onclick="switchProfileTab('manga-fav', this)">📖 Манга</button>
+            <button class="tab-btn" onclick="switchProfileTab('news-fav', this)">📰 Статьи и Новости</button>
+            <button class="tab-btn" onclick="switchProfileTab('seiyuu-fav', this)">🎙️ Сэйю</button>
+        </div>
+
+        <section id="anime-fav" class="favorite-section section-container active">
+            <div class="card-grid" id="anime-fav-grid">
+                </div>
+            <div class="empty-msg" id="anime-empty">Вы еще не добавили ни одного аниме в любимые.</div>
+        </section>
+
+        <section id="manga-fav" class="favorite-section section-container">
+            <div class="card-grid" id="manga-fav-grid">
+                </div>
+            <div class="empty-msg" id="manga-empty">Вы еще не добавили мангу в любимые.</div>
+        </section>
+
+        <section id="news-fav" class="favorite-section section-container">
+            <div class="news-list" id="news-fav-list" style="padding: 0 var(--padding);">
+                </div>
+            <div class="empty-msg" id="news-empty">Нет сохраненных новостей или статей.</div>
+        </section>
+
+        <section id="seiyuu-fav" class="favorite-section section-container">
+            <div class="card-grid" id="seiyuu-fav-grid">
+                </div>
+            <div class="empty-msg" id="seiyuu-empty">Вы еще не добавили актеров озвучки.</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+    <script>
+        function switchProfileTab(tabId, btn) {
+            document.querySelectorAll('.favorite-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Подгружаем Аниме из localStorage
+            const savedAnime = JSON.parse(localStorage.getItem('fav_anime')) || [];
+            const animeGrid = document.getElementById('anime-fav-grid');
+            if(savedAnime.length > 0) {
+                document.getElementById('anime-empty').style.display = 'none';
+                savedAnime.forEach(item => {
+                    animeGrid.innerHTML += `
+                        <div class="anime-card">
+                            <div class="card-image-placeholder" style="background: var(--purple);">🎬</div>
+                            <div class="card-info">
+                                <h3>${item.title}</h3>
+                                <span class="card-badge">${item.badge}</span>
+                            </div>
+                            <a href="${item.link}" class="card-link"></a>
+                        </div>
+                    `;
+                });
+            }
+
+            // Подгружаем Мангу из localStorage
+            const savedManga = JSON.parse(localStorage.getItem('fav_manga')) || [];
+            const mangaGrid = document.getElementById('manga-fav-grid');
+            if(savedManga.length > 0) {
+                document.getElementById('manga-empty').style.display = 'none';
+                savedManga.forEach(item => {
+                    mangaGrid.innerHTML += `
+                        <div class="anime-card">
+                            <div class="card-image-placeholder" style="background: var(--coral);">📖</div>
+                            <div class="card-info">
+                                <h3>${item.title}</h3>
+                                <span class="card-badge">${item.badge}</span>
+                            </div>
+                            <a href="${item.link}" class="card-link"></a>
+                        </div>
+                    `;
+                });
+            }
+
+            // Подгружаем Сэйю из localStorage
+            const savedSeiyuu = JSON.parse(localStorage.getItem('fav_seiyuu')) || [];
+            const seiyuuGrid = document.getElementById('seiyuu-fav-grid');
+            if(savedSeiyuu.length > 0) {
+                document.getElementById('seiyuu-empty').style.display = 'none';
+                savedSeiyuu.forEach(item => {
+                    seiyuuGrid.innerHTML += `
+                        <div class="anime-card">
+                            <div class="card-image-placeholder" style="background: var(--purple-dark);">🎙️</div>
+                            <div class="card-info">
+                                <h3>${item.title}</h3>
+                                <span class="card-badge">${item.badge}</span>
+                            </div>
+                            <a href="${item.link}" class="card-link"></a>
+                        </div>
+                    `;
+                });
+            }
+
+            // Статьи / Новости (имитация для примера сохранения)
+            const savedNews = JSON.parse(localStorage.getItem('fav_news')) || [];
+            const newsList = document.getElementById('news-fav-list');
+            if(savedNews.length > 0) {
+                document.getElementById('news-empty').style.display = 'none';
+                savedNews.forEach(item => {
+                    newsList.innerHTML += `
+                        <article class="news-item-preview" style="margin-bottom: 12px; margin-top: 12px;">
+                            <span class="news-date">Сохранено</span>
+                            <h3>${item.title}</h3>
+                            <a href="${item.link}" class="stretched-link">Читать</a>
+                        </article>
+                    `;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

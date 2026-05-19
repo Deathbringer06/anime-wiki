@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Новости индустрии — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск новостей..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="news.html" class="active">Новости</a></li>
+                <li><a href="about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Новости</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Новости индустрии</h1>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">📰 Все новости</button>
+                <button class="chip">📣 Анонсы</button>
+                <button class="chip">🎬 Трейлеры</button>
+                <button class="chip">🏆 Чарты</button>
+                <button class="chip">🇯🇵 Индустрия</button>
+            </div>
+        </section>
+
+        <section class="news-list" style="margin-bottom: 40px;">
+            
+            <article class="news-item-preview">
+                <span class="news-date">Сегодня, 14:20 · Анонсы</span>
+                <h3>Официально: Анонсирован 4 сезон «Магической Битвы»!</h3>
+                <p>Студия MAPPA поделилась первыми концепт-артами и коротким тизером грядущей арки. По заявлениям продюсеров, производство уже идет полным ходом, а планка качества анимации...</p>
+                <a href="../info/wiki-article.html" class="stretched-link" aria-label="Читать новость об анонсе Магической Битвы">Читать далее</a>
+            </article>
+
+            <article class="news-item-preview">
+                <span class="news-date">Вчера, 18:45 · Трейлеры</span>
+                <h3>Вышел финальный трейлер нового фильма Хаяо Миядзаки</h3>
+                <p>Легендарная Studio Ghibli опубликовала полноценный двухминутный трейлер новой картины мастера. Лента поражает акварельными задниками и традиционной ручной рисовкой...</p>
+                <a href="../info/wiki-article.html" class="stretched-link" aria-label="Читать новость о трейлере Миядзаки">Читать далее</a>
+            </article>
+
+            <article class="news-item-preview">
+                <span class="news-date">2 дня назад · Чарты</span>
+                <h3>Тома «Берсерка» снова возглавили мировые рейтинги продаж манги</h3>
+                <p>После выхода нового коллекционного тома, Berserk уверенно занял первую строчку в книжных чартах не только Японии, но и США, обогнав многие популярные современные онгоинги...</p>
+                <a href="../info/info-card.html" class="stretched-link" aria-label="Читать новость о продажах Берсерка">Читать далее</a>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>

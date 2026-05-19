@@ -1,0 +1,3162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Каталог Аниме — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggleBtn" onclick="window.toggleTheme()" aria-label="Смена темы">☀️</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="anime.html" class="active">Каталог Аниме</a></li>
+                <li><a href="manga.html">Каталог Манги</a></li>
+                <li><a href="characters.html">Персонажи</a></li>
+                <li><a href="seiyuu.html">Сэйю</a></li>
+                <li><a href="studios.html">Студии</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Каталог аниме</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Каталог Аниме</h1>
+
+        <section class="section-container" style="margin-bottom: 12px;">
+            <div class="chip-row">
+                <span class="chip selectable" onclick="window.toggleTagFilter(this, 'сёнен')">🔥 Сёнен</span>
+                <span class="chip selectable" onclick="window.toggleTagFilter(this, 'исекай')">🌌 Исекай</span>
+                <span class="chip selectable" onclick="window.toggleTagFilter(this, 'драма')">🎭 Драма</span>
+                <span class="chip selectable" onclick="window.toggleTagFilter(this, 'гг-имба')">🦾 ГГ-Имба</span>
+                <span class="chip selectable" onclick="window.toggleTagFilter(this, 'магия')">🔮 Магия</span>
+            </div>
+        </section>
+
+        <section class="filter-panel">
+            <div class="filter-row">
+                <select id="sortFilter" class="filter-select" onchange="window.filterAnimeCatalog()">
+                    <option value="rating-desc">📈 По рейтингу</option>
+                    <option value="year-desc">📅 Сначала новые (Год)</option>
+                    <option value="alphabet">🔤 По алфавиту (А-Я)</option>
+                </select>
+                
+                <button id="viewToggleBtn" class="view-toggle-btn" onclick="window.toggleCatalogView()" aria-label="Включить список">📋</button>
+            </div>
+            
+            <div class="filter-row">
+                <select id="statusFilter" class="filter-select" onchange="window.filterAnimeCatalog()">
+                    <option value="all">🌐 Все статусы выпуска</option>
+                    <option value="ongoing">⚡ Онгоинг (Выходит)</option>
+                    <option value="completed">✅ Вышло полностью</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="section-container" style="margin-bottom: 30px;">
+            <div class="anime-grid" id="animeCatalogGrid">
+                
+                <div class="anime-card" data-title="Реинкарнация безработного" data-rating="8.7" data-year="2026" data-status="ongoing" data-tags="исекай гг-имба магия">
+                    <div class="anime-poster">🔮</div>
+                    <div class="anime-card-body">
+                        <h3>Реинкарнация безработного 3</h3>
+                        <p class="anime-meta">⭐️ 8.7 · 2026 · Онгоинг</p>
+                        <a href="../info/anime-card.html" class="stretched-link"></a>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-title="Магическая битва" data-rating="8.5" data-year="2023" data-status="completed" data-tags="сёнен магия драма">
+                    <div class="anime-poster">⚔️</div>
+                    <div class="anime-card-body">
+                        <h3>Магическая битва (Сезон 2)</h3>
+                        <p class="anime-meta">⭐️ 8.5 · 2023 · Вышло</p>
+                        <a href="../info/anime-card.html" class="stretched-link"></a>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-title="Клинок рассекающий демонов" data-rating="8.9" data-year="2024" data-status="completed" data-tags="сёнен драма">
+                    <div class="anime-poster">👺</div>
+                    <div class="anime-card-body">
+                        <h3>Клинок рассекающий демонов</h3>
+                        <p class="anime-meta">⭐️ 8.9 · 2024 · Вышло</p>
+                        <a href="../info/anime-card.html" class="stretched-link"></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Персонажи — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск персонажей..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="anime.html">Каталог Аниме</a></li>
+                <li><a href="manga.html">Каталог Манги</a></li>
+                <li><a href="characters.html" class="active">Персонажи</a></li>
+                <li><a href="seiyuu.html">Сэйю</a></li>
+                <li><a href="studios.html">Студии</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Персонажи</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Персонажи аниме</h1>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">👑 Все герои</button>
+                <button class="chip">⭐ Популярные</button>
+                <button class="chip">⚔️ Главные</button>
+                <button class="chip">👥 Второстепенные</button>
+                <button class="chip">😈 Антагонисты</button>
+                <button class="chip">🌸 Тян</button>
+                <button class="chip">🍃 Куны</button>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <div class="card-grid">
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Аватар</div>
+                    <div class="card-info">
+                        <h3>Рудеус Грейрат</h3>
+                        <span class="card-badge">Реинкарнация безработного</span>
+                    </div>
+                    <a href="../info/character-card.html" class="card-link" aria-label="Открыть Рудеус Грейрат"></a>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Аватар</div>
+                    <div class="card-info">
+                        <h3>Сон Джин Ву</h3>
+                        <span class="card-badge">Поднятие уровня</span>
+                    </div>
+                    <a href="../info/character-card.html" class="card-link" aria-label="Открыть Сон Джин Ву"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Аватар</div>
+                    <div class="card-info">
+                        <h3>Сатору Годжо</h3>
+                        <span class="card-badge">Магическая битва</span>
+                    </div>
+                    <a href="../info/character-card.html" class="card-link" aria-label="Открыть Сатору Годжо"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Аватар</div>
+                    <div class="card-info">
+                        <h3>Леви Аккерман</h3>
+                        <span class="card-badge">Атака титанов</span>
+                    </div>
+                    <a href="../info/character-card.html" class="card-link" aria-label="Открыть Леви Аккерман"></a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Форум — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Дополнительные микростили специально для элементов форума */
+        .forum-btn-container {
+            padding: 0 var(--padding);
+            margin-bottom: 8px;
+        }
+        .action-btn {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .action-btn:active {
+            transform: scale(0.97);
+            background-color: #673AB7;
+        }
+        .thread-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск по форуму..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="anime.html">Каталог Аниме</a></li>
+                <li><a href="manga.html">Каталог Манги</a></li>
+                <li><a href="characters.html">Персонажи</a></li>
+                <li><a href="seiyuu.html">Сэйю</a></li>
+                <li><a href="studios.html">Студии</a></li>
+                <li><a href="forum.html" class="active">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Форум</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Обсуждения и форум</h1>
+
+        <div class="forum-btn-container">
+            <button class="action-btn" onclick="window.showToast('Функция создания тем будет доступна после авторизации!')">
+                ✍️ Создать новую тему
+            </button>
+        </div>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">💬 Все ветки</button>
+                <button class="chip">🔥 Популярное</button>
+                <button class="chip">🎬 Обсуждение серий</button>
+                <button class="chip">🎨 Творчество</button>
+                <button class="chip">⚙️ Работа сайта</button>
+            </div>
+        </section>
+
+        <section class="news-list" style="margin-bottom: 40px;">
+            
+            <article class="news-item-preview">
+                <span class="news-date">Раздел: Обсуждение серий</span>
+                <h3>Финал 3 сезона «Безработного» — оправдал ли ожидания?</h3>
+                <p>Ребята, делимся впечатлениями от финальной серии. Как вам анимация ключевой битвы? Мне показалось, что...</p>
+                <div class="thread-meta">
+                    <span>Ответов: 142</span>
+                    <span>Активность: 2 мин. назад</span>
+                </div>
+                <a href="#" class="stretched-link" onclick="window.showToast('Загрузка обсуждения...')">Открыть ветку</a>
+            </article>
+
+            <article class="news-item-preview">
+                <span class="news-date">Раздел: Творчество</span>
+                <h3>Мой фан-арт по Магической Битве (Годжо Сатору)</h3>
+                <p>Привет всем! Оцените мой свежий диджитал-арт, рисовал около 12 часов в Procreate. Критика приветствуется...</p>
+                <div class="thread-meta">
+                    <span>Ответов: 38</span>
+                    <span>Активность: 15 мин. назад</span>
+                </div>
+                <a href="#" class="stretched-link" onclick="window.showToast('Загрузка обсуждения...')">Открыть ветку</a>
+            </article>
+
+            <article class="news-item-preview">
+                <span class="news-date">Раздел: Популярное</span>
+                <h3>Посоветуйте качественную романтику без штампов</h3>
+                <p>Хочется посмотреть что-то глубокое, где персонажи ведут себя как взрослые люди, а не краснеют 3 сезона подряд при виде...</p>
+                <div class="thread-meta">
+                    <span>Ответов: 512</span>
+                    <span>Активность: 1 час назад</span>
+                </div>
+                <a href="#" class="stretched-link" onclick="window.showToast('Загрузка обсуждения...')">Открыть ветку</a>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="forum.html" class="active">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Каталог Манги — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск манги..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="anime.html">Каталог Аниме</a></li>
+                <li><a href="manga.html" class="active">Каталог Манги</a></li>
+                <li><a href="characters.html">Персонажи</a></li>
+                <li><a href="seiyuu.html">Сэйю</a></li>
+                <li><a href="studios.html">Студии</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Каталог манги</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Каталог Манги</h1>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">📖 Вся манга</button>
+                <button class="chip">🇯🇵 Манга</button>
+                <button class="chip">🇰🇷 Манхва</button>
+                <button class="chip">🇨🇳 Маньхуа</button>
+                <button class="chip">📑 Сингл</button>
+                <button class="chip">🎨 Цветная</button>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <div class="card-grid">
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Обложка</div>
+                    <div class="card-info">
+                        <h3>Берсерк</h3>
+                        <span class="card-badge">Манга</span>
+                    </div>
+                    <a href="../info/manga-card.html" class="card-link" aria-label="Открыть Берсерк"></a>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Обложка</div>
+                    <div class="card-info">
+                        <h3>Поднятие уровня в одиночку</h3>
+                        <span class="card-badge">Манхва</span>
+                    </div>
+                    <a href="../info/manga-card.html" class="card-link" aria-label="Открыть Поднятие уровня в одиночку"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Обложка</div>
+                    <div class="card-info">
+                        <h3>Ван Пис</h3>
+                        <span class="card-badge">Манга</span>
+                    </div>
+                    <a href="../info/manga-card.html" class="card-link" aria-label="Открыть Ван Пис"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Обложка</div>
+                    <div class="card-info">
+                        <h3>Магическая битва</h3>
+                        <span class="card-badge">Манга</span>
+                    </div>
+                    <a href="../info/manga-card.html" class="card-link" aria-label="Открыть Магическая битва"></a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Сэйю — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск сэйю..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="anime.html">Каталог Аниме</a></li>
+                <li><a href="manga.html">Каталог Манги</a></li>
+                <li><a href="characters.html">Персонажи</a></li>
+                <li><a href="seiyuu.html" class="active">Сэйю</a></li>
+                <li><a href="studios.html">Студии</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Сэйю</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Японские актеры озвучки (Сэйю)</h1>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">🎙️ Все актеры</button>
+                <button class="chip">🔥 Топ-100</button>
+                <button class="chip">👩 Женщины</button>
+                <button class="chip">👨 Мужчины</button>
+                <button class="chip">🏆 Победители премий</button>
+                <button class="chip">✨ Новички</button>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <div class="card-grid">
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Фото</div>
+                    <div class="card-info">
+                        <h3>Мамору Мияно</h3>
+                        <span class="card-badge">Лайт, Окабэ, Дазай</span>
+                    </div>
+                    <a href="../info/seiyuu-card.html" class="card-link" aria-label="Открыть Мамору Мияно"></a>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Фото</div>
+                    <div class="card-info">
+                        <h3>Юки Кадзи</h3>
+                        <span class="card-badge">Эрен, Тодороки, Мелиодас</span>
+                    </div>
+                    <a href="../info/seiyuu-card.html" class="card-link" aria-label="Открыть Юки Кадзи"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Фото</div>
+                    <div class="card-info">
+                        <h3>Риэ Такахаси</h3>
+                        <span class="card-badge">Эмилия, Мегумин, Ай Хосино</span>
+                    </div>
+                    <a href="../info/seiyuu-card.html" class="card-link" aria-label="Открыть Риэ Такахаси"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Фото</div>
+                    <div class="card-info">
+                        <h3>Хироси Камия</h3>
+                        <span class="card-badge">Леви, Ято, Арараги</span>
+                    </div>
+                    <a href="../info/seiyuu-card.html" class="card-link" aria-label="Открыть Хироси Камия"></a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Аниме Студии — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск студий..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="anime.html">Каталог Аниме</a></li>
+                <li><a href="manga.html">Каталог Манги</a></li>
+                <li><a href="characters.html">Персонажи</a></li>
+                <li><a href="seiyuu.html">Сэйю</a></li>
+                <li><a href="studios.html" class="active">Студии</a></li>
+                <li><a href="forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Студии</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Аниме-студии</h1>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">🏢 Все студии</button>
+                <button class="chip">🔥 Популярные</button>
+                <button class="chip">⏳ Ветераны индустрии</button>
+                <button class="chip">🎨 Известные графикой</button>
+                <button class="chip">🚀 Новое поколение</button>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <div class="card-grid">
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Логотип</div>
+                    <div class="card-info">
+                        <h3>MAPPA</h3>
+                        <span class="card-badge">Магическая битва, Титаны</span>
+                    </div>
+                    <a href="../info/studio-card.html" class="card-link" aria-label="Открыть студию MAPPA"></a>
+                </div>
+                
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Логотип</div>
+                    <div class="card-info">
+                        <h3>ufotable</h3>
+                        <span class="card-badge">Клинок рассекающий демонов</span>
+                    </div>
+                    <a href="../info/studio-card.html" class="card-link" aria-label="Открыть студию ufotable"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Логотип</div>
+                    <div class="card-info">
+                        <h3>Madhouse</h3>
+                        <span class="card-badge">Тетрадь смерти, Ванпанчмен</span>
+                    </div>
+                    <a href="../info/studio-card.html" class="card-link" aria-label="Открыть студию Madhouse"></a>
+                </div>
+
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Логотип</div>
+                    <div class="card-info">
+                        <h3>Studio Ghibli</h3>
+                        <span class="card-badge">Шедевры Миядзаки</span>
+                    </div>
+                    <a href="../info/studio-card.html" class="card-link" aria-label="Открыть студию Ghibli"></a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FFF2E0">
+    <title>Animepedia — карточка аниме</title>
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+    <header class="app-header">
+        <a href="Каталог аниме.html" class="back-btn" aria-label="Назад">←</a>
+        <div>
+            <a class="brand" href="Главная страница.html">Anime<span>pedia</span></a>
+            <p class="header-subtitle">Карточка аниме</p>
+        </div>
+        <button class="icon-btn" type="button" data-favorite aria-label="В избранное">♡</button>
+    </header>
+
+    <main id="mainContent" class="app-shell">
+        <!-- Картинка сверху -->
+        <div class="detail-cover">
+            <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=900&q=82" alt="Постер аниме">
+        </div>
+
+        <!-- Описание снизу -->
+        <div class="detail-info">
+            <p class="page-kicker">TV-сериал • 2024</p>
+            <h1>Поднятие уровня в одиночку</h1>
+            <p class="muted">Охотник низкого ранга получает систему прокачки и становится сильнейшим.</p>
+
+            <!-- Характеристики сеткой -->
+            <div class="meta-grid">
+                <div class="meta-box">
+                    <strong>9.5</strong>
+                    <span class="card-meta">Рейтинг</span>
+                </div>
+                <div class="meta-box">
+                    <strong>12</strong>
+                    <span class="card-meta">Серий</span>
+                </div>
+                <div class="meta-box">
+                    <strong>A-1</strong>
+                    <span class="card-meta">Студия</span>
+                </div>
+                <div class="meta-box">
+                    <strong>Экшен</strong>
+                    <span class="card-meta">Жанр</span>
+                </div>
+            </div>
+
+            <!-- Кнопки действий -->
+            <div class="action-row">
+                <button class="btn-primary" type="button" data-toast="Добавлено в список">📺 Смотреть</button>
+                <button class="round-btn" type="button" data-favorite aria-label="В избранное">♡</button>
+            </div>
+        </div>
+
+        <!-- Связанные персонажи -->
+        <section class="section">
+            <div class="section-header">
+                <h2>⭐ Персонажи</h2>
+                <a href="Каталог персонажей.html" class="section-link">Все →</a>
+            </div>
+            <div class="list-stack">
+                <a href="Карточка персонажа.html" class="list-card" data-search="сон джин-у">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=120&q=80" alt="Сон Джин-у">
+                    <div class="content">
+                        <strong>Сон Джин-у</strong>
+                        <p class="card-meta">Главный герой</p>
+                    </div>
+                    <span class="score">⭐ 9.6</span>
+                </a>
+                <a href="Карточка персонажа.html" class="list-card" data-search="ча хэ-ин">
+                    <img src="https://images.unsplash.com/photo-1541562232579-512a21360020?auto=format&fit=crop&w=120&q=80" alt="Ча Хэ-ин">
+                    <div class="content">
+                        <strong>Ча Хэ-ин</strong>
+                        <p class="card-meta">S-ранг охотник</p>
+                    </div>
+                    <span class="score">⭐ 9.3</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Синопсис -->
+        <section class="section">
+            <div class="section-header">
+                <h2>📖 Сюжет</h2>
+            </div>
+            <p>Десять лет назад открылись врата в другие миры. Охотники сражаются с монстрами, но Сон Джин-у — слабейший из них. После смертельной миссии он получает уникальную систему, которая позволяет ему прокачиваться как в игре. Так начинается его путь к вершине.</p>
+        </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Основная навигация">
+        <a href="Главная страница.html" class="nav-item" data-nav="home"><span>⌂</span><small>Главная</small></a>
+        <a href="Каталог аниме.html" class="nav-item" data-nav="catalog"><span>▦</span><small>Каталог</small></a>
+        <a href="Каталог персонажей.html" class="nav-item" data-nav="people"><span>☆</span><small>Герои</small></a>
+        <a href="Новости.html" class="nav-item" data-nav="news"><span>◷</span><small>Новости</small></a>
+        <a href="О проекте.html" class="nav-item" data-nav="menu"><span>☰</span><small>Меню</small></a>
+    </nav>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Карточка персонажа: Сатору Годжо — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Микростили для страницы портрета персонажа */
+        .character-avatar-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0 var(--padding);
+            margin-top: 12px;
+        }
+        .character-avatar {
+            width: 60%; /* Идеальный размер для мобильного экрана, чтобы не занимать весь скролл */
+            aspect-ratio: 1 / 1; /* Строгий квадрат под портрет по стандартам Material 3 */
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            border-radius: 50%; /* Круглый аватар выглядит очень стильно и аккуратно */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 32px;
+            box-shadow: 0 6px 16px rgba(126, 87, 194, 0.15);
+            border: 4px solid var(--surface);
+        }
+        .meta-info-block {
+            background-color: var(--surface);
+            margin: 0 var(--padding);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--surface-variant);
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+        .meta-item:not(:last-child) {
+            border-right: 1px solid var(--surface-variant);
+        }
+        .meta-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .meta-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .character-bio {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .action-button-group {
+            padding: 0 var(--padding);
+            display: flex;
+        }
+        .btn-primary-full {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .btn-primary-full:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск персонажей..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" style="gap: 20px;">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — 
+            <a href="../catalog/characters.html" style="color: var(--purple-dark);">Персонажи</a> — 
+            <span>Сатору Годжо</span>
+        </div>
+
+        <div class="character-avatar-wrapper">
+            <div class="character-avatar">
+                👤
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 0 var(--padding);">
+            <h1 style="font-size: 24px; font-weight: 800; line-height: 1.2;">Сатору Годжо</h1>
+            <p style="font-size: 14px; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Магическая битва / Jujutsu Kaisen</p>
+        </div>
+
+        <div class="meta-info-block">
+            <div class="meta-item">
+                <span class="meta-value">Запечатан</span>
+                <span class="meta-label">Статус</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Мужской</span>
+                <span class="meta-label">Пол</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Главный</span>
+                <span class="meta-label">Роль</span>
+            </div>
+        </div>
+
+        <div class="action-button-group">
+            <button class="btn-primary-full" onclick="window.showToast('Сатору Годжо добавлен в ваши любимые герои! ⭐')">
+                ⭐ Добавить в любимые
+            </button>
+        </div>
+
+        <article class="character-bio">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Биография персонажа</h2>
+            <p>
+                Один из главных героев вселенной «Магическая битва». Сильнейший маг современности, прирожденный лидер и преподаватель в Токийском столичном техническом колледже магии. Является первым за последние несколько сотен лет человеком, унаследовавшим одновременно и «Шесть глаз», и врожденную проклятую технику клана Годжо — «Безграничность». Обладает эксцентричным, игривым и порой высокомерным характером, однако искренне заботится о своих учениках и стремится воспитать сильное новое поколение магов, способное реформировать коррумпированный шаманский мир.
+            </p>
+        </article>
+
+        <section class="section-container" style="margin-top: 8px; margin-bottom: 30px;">
+            <h2 class="section-title">Связанные страницы</h2>
+            <div class="chip-row">
+                <a href="seiyuu-card.html" class="chip">🎙️ Юити Накамура (Сэйю)</a>
+                <a href="anime-card.html" class="chip">🎬 Магическая битва (Аниме)</a>
+                <a href="studio-card.html" class="chip">🏢 Studio MAPPA (Студия)</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Берсерк (Манга) — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Использование переиспользуемых микростилей из нашего UI Kit карточек */
+        .details-poster-wrapper {
+            width: 100%;
+            padding: 0 var(--padding);
+            margin-top: 12px;
+        }
+        .details-poster {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, var(--coral), var(--pink));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .meta-info-block {
+            background-color: var(--surface);
+            margin: 0 var(--padding);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--surface-variant);
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+        .meta-item:not(:last-child) {
+            border-right: 1px solid var(--surface-variant);
+        }
+        .meta-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .meta-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .anime-description {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .action-button-group {
+            padding: 0 var(--padding);
+            display: flex;
+            gap: 8px;
+        }
+        .btn-primary {
+            flex: 2;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-secondary {
+            flex: 1;
+            background-color: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--surface-variant);
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-primary:active, .btn-secondary:active {
+            transform: scale(0.96);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск на вики..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" style="gap: 16px;">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — 
+            <a href="../catalog/manga.html" style="color: var(--purple-dark);">Каталог манги</a> — 
+            <span>Берсерк</span>
+        </div>
+
+        <div class="details-poster-wrapper">
+            <div class="details-poster">
+                📖 Обложка / Баннер манги
+            </div>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 0; margin-top: 4px;">Берсерк / Berserk</h1>
+
+        <div class="meta-info-block">
+            <div class="meta-item">
+                <span class="meta-value">⭐️ 9.6</span>
+                <span class="meta-label">Рейтинг</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">42 т.</span>
+                <span class="meta-label">Тома</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Онгоинг</span>
+                <span class="meta-label">Статус</span>
+            </div>
+        </div>
+
+        <div class="action-button-group">
+            <button class="btn-primary" onclick="window.showToast('Манга добавлена в список «Читаю»!')">📖 Хочу читать</button>
+            <button class="btn-secondary" onclick="window.showToast('Добавлено в Избранное ❤️')">❤️</button>
+        </div>
+
+        <article class="anime-description">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Аннотация</h2>
+            <p>
+                Легендарное темное фэнтези, созданное Кентаро Миурой. История рассказывает о жизни Гатса, прирожденного наемника, известного как Черный Мечник. Проклятый зловещим клеймом, которое привлекает к нему демонов каждую ночь, Гатс путешествует по раздираемому войнами миру в поисках мести своему бывшему командиру и другу Гриффиту, который предал отряд соратников ради божественного могущества.
+            </p>
+        </article>
+
+        <section class="section-container" style="margin-top: 12px; margin-bottom: 30px;">
+            <h2 class="section-title">Связанные страницы</h2>
+            <div class="chip-row">
+                <a href="character-card.html" class="chip">👤 Гатс (Персонаж)</a>
+                <a href="anime-card.html" class="chip">🎬 Аниме-адаптация (1997)</a>
+                <a href="wiki-article.html" class="chip">📝 Кентаро Миура (Автор)</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права Copyleft.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Карточка сэйю: Мамору Мияно — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Микростили для страницы портрета сэйю */
+        .seiyuu-avatar-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0 var(--padding);
+            margin-top: 12px;
+        }
+        .seiyuu-avatar {
+            width: 60%;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 32px;
+            box-shadow: 0 6px 16px rgba(126, 87, 194, 0.15);
+            border: 4px solid var(--surface);
+        }
+        .meta-info-block {
+            background-color: var(--surface);
+            margin: 0 var(--padding);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--surface-variant);
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+        .meta-item:not(:last-child) {
+            border-right: 1px solid var(--surface-variant);
+        }
+        .meta-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .meta-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .seiyuu-bio {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .action-button-group {
+            padding: 0 var(--padding);
+            display: flex;
+        }
+        .btn-primary-full {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .btn-primary-full:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск сэйю..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" style="gap: 20px;">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — 
+            <a href="../catalog/seiyuu.html" style="color: var(--purple-dark);">Сэйю</a> — 
+            <span>Мамору Мияно</span>
+        </div>
+
+        <div class="seiyuu-avatar-wrapper">
+            <div class="seiyuu-avatar">
+                🎙️
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 0 var(--padding);">
+            <h1 style="font-size: 24px; font-weight: 800; line-height: 1.2;">Мамору Мияно</h1>
+            <p style="font-size: 14px; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Япония, префектура Сайтама</p>
+        </div>
+
+        <div class="meta-info-block">
+            <div class="meta-item">
+                <span class="meta-value">250+</span>
+                <span class="meta-label">Ролей</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Сёнен</span>
+                <span class="meta-label">Жанр</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">4 премии</span>
+                <span class="meta-label">Награды</span>
+            </div>
+        </div>
+
+        <div class="action-button-group">
+            <button class="btn-primary-full" onclick="window.showToast('Подписка на уведомления об актере оформлена! 🔔')">
+                🔔 Следить за обновлениями
+            </button>
+        </div>
+
+        <article class="seiyuu-bio">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Краткая биография</h2>
+            <p>
+                Один из самых знаменитых, востребованных и харизматичных японских сэйю, а также успешный певец и актер театра. Родился 8 июня 1983 года. Начал карьеру в начале 2000-х годов и мгновенно завоевал всемирное признание благодаря озвучке Ягами Лайта в культовом аниме «Тетрадь смерти», за которую был номинирован на престижную премию Seiyu Awards. Известен невероятным эмоциональным диапазоном: способен идеально отыгрывать как хладнокровных гениев, так и эксцентричных безумцев или комичных персонажей.
+            </p>
+        </article>
+
+        <section class="section-container" style="margin-top: 8px; margin-bottom: 30px;">
+            <h2 class="section-title">Знаменитые роли сэйю</h2>
+            <div class="chip-row">
+                <a href="character-card.html" class="chip">🍎 Ягами Лайт (Тетрадь Смерти)</a>
+                <a href="character-card.html" class="chip">🥼 Окабэ Ринтаро (Врата Штейна)</a>
+                <a href="character-card.html" class="chip">🩹 Дазай Осаму (Бродячие псы)</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Карточка студии: MAPPA — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Микростили для страницы детальной карточки студии */
+        .details-poster-wrapper {
+            width: 100%;
+            padding: 0 var(--padding);
+            margin-top: 12px;
+        }
+        .details-poster {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, var(--purple-dark), var(--accent));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .meta-info-block {
+            background-color: var(--surface);
+            margin: 0 var(--padding);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--surface-variant);
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+        .meta-item:not(:last-child) {
+            border-right: 1px solid var(--surface-variant);
+        }
+        .meta-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .meta-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .studio-description {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .action-button-group {
+            padding: 0 var(--padding);
+            display: flex;
+        }
+        .btn-primary-full {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .btn-primary-full:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск студий..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" style="gap: 20px;">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — 
+            <a href="../catalog/studios.html" style="color: var(--purple-dark);">Студии</a> — 
+            <span>MAPPA</span>
+        </div>
+
+        <div class="details-poster-wrapper">
+            <div class="details-poster">
+                🏢 Логотип / Ключевой арт студии
+            </div>
+        </div>
+
+        <div style="padding: 0 var(--padding);">
+            <h1 style="font-size: 24px; font-weight: 800; line-height: 1.2;">Studio MAPPA</h1>
+            <p style="font-size: 14px; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Maruyama Animation Produce Project Association</p>
+        </div>
+
+        <div class="meta-info-block">
+            <div class="meta-item">
+                <span class="meta-value">90+</span>
+                <span class="meta-label">Тайтлов</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">2011</span>
+                <span class="meta-label">Основана</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Экшен / Драма</span>
+                <span class="meta-label">Профиль</span>
+            </div>
+        </div>
+
+        <div class="action-button-group">
+            <button class="btn-primary-full" onclick="window.showToast('Студия добавлена в отслеживаемые! 🌟')">
+                ⭐ В избранные студии
+            </button>
+        </div>
+
+        <article class="studio-description">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">История и стиль студии</h2>
+            <p>
+                Японская анимационная студия, основанная Масао Маруямой, бывшим продюсером и сооснователем легендарной студии Madhouse. MAPPA ворвалась в индустрию с амбициозными проектами и быстро заслужила репутацию студии, способной создавать комплексный экшен с невероятно сложной и динамичной 3D/2D графикой. Студия известна тем, что берётся за производство культовых и трудоёмких франшиз, обеспечивая высочайшую планку детализации боёв и кинематографичную режиссуру.
+            </p>
+        </article>
+
+        <section class="section-container" style="margin-top: 8px; margin-bottom: 30px;">
+            <h2 class="section-title">Популярные релизы студии</h2>
+            <div class="chip-row">
+                <a href="anime-card.html" class="chip">🎬 Магическая Битва</a>
+                <a href="anime-card.html" class="chip">⚔️ Атака Титанов: Финал</a>
+                <a href="anime-card.html" class="chip">🪚 Человек-Бензопила</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>История зарождения аниме индустрии — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Микростили для текстовой статьи */
+        .wiki-article-content {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .wiki-article-content p {
+            margin-bottom: 14px;
+        }
+        .wiki-article-content h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 20px 0 10px;
+            color: var(--purple-dark);
+        }
+        .wiki-meta-box {
+            display: flex;
+            gap: 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+        .action-button-group {
+            padding: 0 var(--padding);
+            display: flex;
+            margin-top: 16px;
+        }
+        .btn-primary-full {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .btn-primary-full:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск по вики..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="../site/news.html">Новости</a></li>
+                <li><a href="../site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" style="gap: 12px; margin-bottom: 40px;">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — 
+            <span>Статья Wiki</span>
+        </div>
+
+        <div style="padding: 0 var(--padding);">
+            <h1 style="font-size: 24px; font-weight: 800; line-height: 1.2; margin-top: 4px;">История развития и зарождения японской анимации</h1>
+            
+            <div class="wiki-meta-box" style="margin-top: 8px;">
+                <span>⏱ 5 мин. чтения</span>
+                <span>👁 1.2к просмотров</span>
+            </div>
+        </div>
+
+        <article class="wiki-article-content">
+            <p>
+                Японская анимация, ставшая сегодня глобальным культурным и экономическим феноменом, прошла долгий путь от первых экспериментальных короткометражек начала XX века до масштабной индустрии с миллионной аудиторией по всему миру.
+            </p>
+
+            <h2>Первые шаги (1917–1940)</h2>
+            <p>
+                История аниме началась в 1917 году, когда японские художники-карикатуристы Отен Симокава, Дзюнъити Коути и Сэитаро Китаяма начали экспериментировать с техникой аппликационной и меловой анимации. Первые работы длились всего несколько минут, создавались вручную на чистом энтузиазме и часто брали за основу классические японские народные сказки.
+            </p>
+
+            <h2>Эпоха Осаму Тэдзуки (1960-е)</h2>
+            <p>
+                Настоящая революция в индустрии произошла благодаря Осаму Тэдзуке, которого по праву называют «богом манги и аниме». Вдохновленный работами Уолта Диснея, Тэдзука адаптировал свою мангу <i>Astro Boy</i> для телеэкранов в 1963 году. Именно он заложил те стилистические основы, которые мы узнаем и сегодня: большие выразительные глаза персонажей, использование кинематографичных ракурсов камеры и динамичный монтаж, компенсирующий ограниченный бюджет анимации.
+            </p>
+
+            <h2>Золотой век и мировое признание</h2>
+            <p>
+                В 1980-х годах индустрия пережила колоссальный технологический скачок. Появились такие легендарные студии, как Studio Ghibli во главе с Хаяо Миядзаки. Полнометражные фильмы студии вывели аниме на уровень высокого художественного искусства, завоевав признание критиков на международных кинофестивалях и навсегда изменив восприятие анимации как "контента исключительно для детей".
+            </p>
+        </article>
+
+        <div class="action-button-group">
+            <button class="btn-primary-full" onclick="window.showToast('Ссылка скопирована в буфер обмена! 🔗')">
+                🔗 Поделиться статьёй
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="../site/about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>О проекте — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+    <style>
+        /* Дополнительные стили для формы обратной связи */
+        .about-text {
+            padding: 0 var(--padding);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .about-text p {
+            margin-bottom: 12px;
+        }
+        .feedback-form {
+            background-color: var(--surface);
+            border: 1px solid var(--surface-variant);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin: 0 var(--padding) 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .form-input, .form-textarea {
+            width: 100%;
+            background-color: var(--background);
+            border: 1px solid var(--surface-variant);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            font-size: 15px;
+            color: var(--text);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--purple);
+            box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.15);
+        }
+        .form-textarea {
+            resize: none;
+            height: 100px;
+        }
+        .btn-submit {
+            width: 100%;
+            background-color: var(--purple-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.2);
+        }
+        .btn-submit:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск по сайту..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="about.html" class="active">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>О проекте</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">О проекте AnimeWiki</h1>
+
+        <section class="about-text">
+            <p>
+                <strong>AnimeWiki</strong> — это современная мобильная энциклопедия-вики, созданная специально для фанатов японской поп-культуры, аниме и манги. Наша цель — предоставить быстрый, удобный и интуитивно понятный доступ к базе данных тайтлов, персонажей, актеров озвучки (сэйю) и студий прямо с экрана вашего смартфона.
+            </p>
+            <p>
+                Интерфейс спроектирован по современным стандартам мобильной адаптивности, поддерживает комфортную навигацию одной рукой ("зону большого пальца") и оптимизирован для быстрой загрузки даже при слабом интернет-соединении.
+            </p>
+        </section>
+
+        <section class="section-container">
+            <h2 class="section-title" style="padding-left: 0; margin-bottom: 12px;">Обратная связь</h2>
+            
+            <form class="feedback-form" onsubmit="event.preventDefault(); window.showToast('Спасибо! Ваше сообщение успешно отправлено. ✉️'); this.reset();">
+                <div class="form-group">
+                    <label for="emailInput">Ваш Email</label>
+                    <input type="email" id="emailInput" class="form-input" placeholder="example@mail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="messageInput">Сообщение</label>
+                    <textarea id="messageInput" class="form-textarea" placeholder="Ваши предложения или баг-репорты..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">🚀 Отправить сообщение</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="about.html" class="active">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Новости индустрии — AnimeWiki</title>
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск новостей..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="../catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="../catalog/characters.html">Персонажи</a></li>
+                <li><a href="../catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="../catalog/studios.html">Студии</a></li>
+                <li><a href="../catalog/forum.html">Форум</a></li>
+                <li><a href="news.html" class="active">Новости</a></li>
+                <li><a href="about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div style="padding: 12px var(--padding) 0; font-size: 13px; color: var(--text-muted); font-weight: 500;">
+            <a href="../index.html" style="color: var(--purple-dark);">Главная</a> — <span>Новости</span>
+        </div>
+
+        <h1 class="section-title" style="padding-top: 4px;">Новости индустрии</h1>
+
+        <section class="section-container">
+            <div class="chip-row">
+                <button class="chip" style="background-color: var(--purple); border-color: var(--purple-dark);">📰 Все новости</button>
+                <button class="chip">📣 Анонсы</button>
+                <button class="chip">🎬 Трейлеры</button>
+                <button class="chip">🏆 Чарты</button>
+                <button class="chip">🇯🇵 Индустрия</button>
+            </div>
+        </section>
+
+        <section class="news-list" style="margin-bottom: 40px;">
+            
+            <article class="news-item-preview">
+                <span class="news-date">Сегодня, 14:20 · Анонсы</span>
+                <h3>Официально: Анонсирован 4 сезон «Магической Битвы»!</h3>
+                <p>Студия MAPPA поделилась первыми концепт-артами и коротким тизером грядущей арки. По заявлениям продюсеров, производство уже идет полным ходом, а планка качества анимации...</p>
+                <a href="../info/wiki-article.html" class="stretched-link" aria-label="Читать новость об анонсе Магической Битвы">Читать далее</a>
+            </article>
+
+            <article class="news-item-preview">
+                <span class="news-date">Вчера, 18:45 · Трейлеры</span>
+                <h3>Вышел финальный трейлер нового фильма Хаяо Миядзаки</h3>
+                <p>Легендарная Studio Ghibli опубликовала полноценный двухминутный трейлер новой картины мастера. Лента поражает акварельными задниками и традиционной ручной рисовкой...</p>
+                <a href="../info/wiki-article.html" class="stretched-link" aria-label="Читать новость о трейлере Миядзаки">Читать далее</a>
+            </article>
+
+            <article class="news-item-preview">
+                <span class="news-date">2 дня назад · Чарты</span>
+                <h3>Тома «Берсерка» снова возглавили мировые рейтинги продаж манги</h3>
+                <p>После выхода нового коллекционного тома, Berserk уверенно занял первую строчку в книжных чартах не только Японии, но и США, обогнав многие популярные современные онгоинги...</p>
+                <a href="../info/info-card.html" class="stretched-link" aria-label="Читать новость о продажах Берсерка">Читать далее</a>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="about.html">О проекте</a> · 
+            <a href="../catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FFF2E0">
+    <title>Animepedia - главная</title>
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body class="home-page">
+    <header class="app-header home-header">
+        <div>
+            <a class="brand" href="Главная страница.html">Anime<span>pedia</span></a>
+            <p class="header-subtitle">Аниме, манга, персонажи</p>
+        </div>
+        <button class="icon-btn profile-btn" type="button" data-toast="Профиль в разработке" aria-label="Профиль">👤</button>
+    </header>
+
+    <main id="mainContent" class="app-shell home-shell">
+        <section class="home-hero" aria-labelledby="homeTitle">
+            <div class="hero-copy">
+                <p class="page-kicker">Мобильная энциклопедия</p>
+                <h1 id="homeTitle">Найди следующий тайтл без лишних кликов</h1>
+                <p class="hero-lead">Каталог, персонажи, манга и новости собраны в один быстрый главный экран.</p>
+            </div>
+
+            <form class="search-card home-search" data-search-form role="search">
+                <span aria-hidden="true">🔍</span>
+                <input type="search" placeholder="Поиск по аниме, манге, героям" aria-label="Поиск по сайту">
+                <button class="search-submit" type="submit">Найти</button>
+            </form>
+
+            <div class="quick-grid" aria-label="Быстрые разделы">
+                <a class="quick-tile" href="Каталог аниме.html">
+                    <span aria-hidden="true">🎬</span>
+                    <strong>Аниме</strong>
+                    <small>1240+</small>
+                </a>
+                <a class="quick-tile" href="Каталог манги.html">
+                    <span aria-hidden="true">📚</span>
+                    <strong>Манга</strong>
+                    <small>860+</small>
+                </a>
+                <a class="quick-tile" href="Каталог персонажей.html">
+                    <span aria-hidden="true">⭐</span>
+                    <strong>Герои</strong>
+                    <small>3800+</small>
+                </a>
+                <a class="quick-tile" href="Новости.html">
+                    <span aria-hidden="true">📰</span>
+                    <strong>Новости</strong>
+                    <small>сегодня</small>
+                </a>
+            </div>
+        </section>
+
+        <section class="feature-panel" aria-labelledby="featureTitle">
+            <a class="feature-cover" href="Аниме Карточка.html" data-search="поднятие уровня одиночку solo leveling">
+                <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&w=900&q=80" alt="Иллюстрация популярного аниме">
+                <span class="feature-rank">#1 недели</span>
+            </a>
+            <div class="feature-content">
+                <p class="page-kicker">Сейчас читают</p>
+                <h2 id="featureTitle">Поднятие уровня в одиночку</h2>
+                <p>Экшен, темное фэнтези, охотники. Быстрый вход в карточку с рейтингом, описанием и связанными героями.</p>
+                <div class="feature-actions">
+                    <a href="Аниме Карточка.html" class="btn-primary">Открыть карточку</a>
+                    <button class="round-btn" type="button" data-favorite data-favorite-id="solo-leveling" aria-label="Добавить в избранное">♡</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="popularTitle">
+            <div class="section-header clean-header">
+                <div>
+                    <p class="page-kicker">Каталог</p>
+                    <h2 id="popularTitle">Популярное</h2>
+                </div>
+                <a href="Каталог аниме.html" class="section-link">Все</a>
+            </div>
+
+            <div class="vertical-feed">
+                <a href="Аниме Карточка.html" class="feed-card" data-search="магическая битва дзюдзюцу">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80" alt="Постер аниме Магическая битва">
+                    <div>
+                        <strong>Магическая битва 2</strong>
+                        <p>TV-сериал • экшен • рейтинг 9.4</p>
+                    </div>
+                    <span aria-hidden="true">›</span>
+                </a>
+                <a href="Аниме Карточка.html" class="feed-card" data-search="фрирен фэнтези">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=400&q=80" alt="Постер фэнтези аниме">
+                    <div>
+                        <strong>Фрирен</strong>
+                        <p>TV-сериал • фэнтези • рейтинг 9.2</p>
+                    </div>
+                    <span aria-hidden="true">›</span>
+                </a>
+                <a href="Карточка манги.html" class="feed-card" data-search="человек бензопила манга">
+                    <img src="https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?auto=format&fit=crop&w=400&q=80" alt="Обложка манги">
+                    <div>
+                        <strong>Человек-бензопила</strong>
+                        <p>Манга • боевик • рейтинг 9.1</p>
+                    </div>
+                    <span aria-hidden="true">›</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="genresTitle">
+            <div class="section-header clean-header">
+                <div>
+                    <p class="page-kicker">Быстрый выбор</p>
+                    <h2 id="genresTitle">Жанры</h2>
+                </div>
+            </div>
+            <div class="genre-list">
+                <a href="Каталог аниме.html" class="genre-pill">Экшен</a>
+                <a href="Каталог аниме.html" class="genre-pill">Романтика</a>
+                <a href="Каталог аниме.html" class="genre-pill">Фэнтези</a>
+                <a href="Каталог аниме.html" class="genre-pill">Повседневность</a>
+                <a href="Каталог аниме.html" class="genre-pill">Драма</a>
+                <a href="Каталог аниме.html" class="genre-pill">Комедия</a>
+            </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="newsTitle">
+            <div class="section-header clean-header">
+                <div>
+                    <p class="page-kicker">Обновления</p>
+                    <h2 id="newsTitle">Новости</h2>
+                </div>
+                <a href="Новости.html" class="section-link">Читать</a>
+            </div>
+            <div class="news-stack">
+                <a href="Новости.html" class="news-row" data-search="анонс третий сезон">
+                    <time datetime="2026-05-10">10 мая</time>
+                    <strong>Анонсирован новый сезон популярного экшен-тайтла</strong>
+                </a>
+                <a href="Новости.html" class="news-row" data-search="топ аниме весна">
+                    <time datetime="2026-05-12">12 мая</time>
+                    <strong>Топ весны: что добавить в список просмотра</strong>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Основная навигация">
+        <a href="Главная страница.html" class="nav-item" data-nav="home">
+            <span>⌂</span>
+            <small>Главная</small>
+        </a>
+        <a href="Каталог аниме.html" class="nav-item" data-nav="catalog">
+            <span>▦</span>
+            <small>Каталог</small>
+        </a>
+        <a href="Каталог персонажей.html" class="nav-item" data-nav="people">
+            <span>☆</span>
+            <small>Герои</small>
+        </a>
+        <a href="Новости.html" class="nav-item" data-nav="news">
+            <span>◷</span>
+            <small>Новости</small>
+        </a>
+        <a href="О проекте.html" class="nav-item" data-nav="menu">
+            <span>☰</span>
+            <small>Меню</small>
+        </a>
+    </nav>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="mobile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>AnimeWiki — Главная</title>
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Anime<span>Wiki</span></a>
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggleBtn" onclick="window.toggleTheme()" aria-label="Смена темы">☀️</button>
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Поиск">🔍</button>
+                <button class="icon-btn" id="menuToggleBtn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        
+        <div class="search-bar-dropdown hidden" id="searchDropdown">
+            <input type="search" placeholder="Поиск на вики..." class="search-input">
+        </div>
+
+        <nav class="site-nav hidden" id="siteNav">
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="catalog/anime.html">Каталог Аниме</a></li>
+                <li><a href="catalog/manga.html">Каталог Манги</a></li>
+                <li><a href="catalog/characters.html">Персонажи</a></li>
+                <li><a href="catalog/seiyuu.html">Сэйю</a></li>
+                <li><a href="catalog/studios.html">Студии</a></li>
+                <li><a href="catalog/forum.html">Форум</a></li>
+                <li><a href="site/news.html">Новости</a></li>
+                <li><a href="site/about.html">О проекте</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <section class="section-container">
+            <h2 class="section-title">Свежие новости</h2>
+            <div class="horizontal-scroll-container">
+                
+                <article class="news-card">
+                    <span class="news-tag">Анонс</span>
+                    <h3>Вышел тизер финального сезона «Атаки Титанов»</h3>
+                    <p>Студия MAPPA показала ключевой арт и первый полноценный тизер грядущего финала истории...</p>
+                    <a href="site/news.html" class="news-link">Подробнее →</a>
+                </article>
+
+                <article class="news-card">
+                    <span class="news-tag">Индустрия</span>
+                    <h3>Тренды аниме индустрии 2026 года</h3>
+                    <p>Аналитики зафиксировали рекордный рост популярности жанра киберпанк и темного фэнтези на Западе...</p>
+                    <a href="site/news.html" class="news-link">Подробнее →</a>
+                </article>
+
+                <article class="news-card">
+                    <span class="news-tag">Манга</span>
+                    <h3>Берсерк возвращается с новыми главами</h3>
+                    <p>Преемники Кентаро Миуры объявили дату выхода долгожданной 377-й главы культовой манги...</p>
+                    <a href="site/news.html" class="news-link">Подробнее →</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2 class="section-title">Быстрый поиск по жанрам</h2>
+            <div class="chip-row">
+                <a href="catalog/anime.html" class="chip">🔥 Сёнен</a>
+                <a href="catalog/anime.html" class="chip">🌌 Исекай</a>
+                <a href="catalog/anime.html" class="chip">⚔️ Самураи</a>
+                <a href="catalog/anime.html" class="chip">🤖 Меха</a>
+                <a href="catalog/anime.html" class="chip">🦾 Киберпанк</a>
+                <a href="catalog/anime.html" class="chip">🎭 Драма</a>
+            </div>
+        </section>
+
+        <section class="section-container" style="margin-bottom: 30px;">
+            <h2 class="section-title">Сейчас в тренде</h2>
+            <div class="vertical-list">
+                
+                <div class="catalog-card-inline">
+                    <div class="card-inline-badge">1</div>
+                    <div class="card-inline-info">
+                        <h4>Реинкарнация безработного 3</h4>
+                        <p>⭐️ 8.7 · ТВ-Сериал · 2026</p>
+                    </div>
+                    <a href="info/anime-card.html" class="card-inline-action">➔</a>
+                </div>
+
+                <div class="catalog-card-inline">
+                    <div class="card-inline-badge">2</div>
+                    <div class="card-inline-info">
+                        <h4>Магическая битва 2</h4>
+                        <p>⭐️ 8.5 · ТВ-Сериал · 2023</p>
+                    </div>
+                    <a href="info/anime-card.html" class="card-inline-action">➔</a>
+                </div>
+
+                <div class="catalog-card-inline">
+                    <div class="card-inline-badge">3</div>
+                    <div class="card-inline-info">
+                        <h4>Берсерк (Манга)</h4>
+                        <p>⭐️ 9.6 · Том 42 · Онгоинг</p>
+                    </div>
+                    <a href="info/manga-card.html" class="card-inline-action">➔</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 AnimeWiki. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="site/about.html">О проекте</a> · 
+            <a href="catalog/forum.html">Поддержка</a>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="mobile.js"></script>
+</body>
+</html>
+/* ==========================================================================
+   1. СИСТЕМНЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ (Material 3 & Pastel Vibe)
+   ========================================================================== */
+/* Переменные по умолчанию (Темная тема, которая у нас и была) */
+:root {
+    --background: #121214;
+    --surface: #1a1a1e;
+    --surface-variant: #26262b;
+    --text: #e2e2e9;
+    --text-muted: #a1a1b5;
+    
+    --purple: #7e57c2;
+    --purple-dark: #9575cd;
+    --accent: #00e5ff;
+    --coral: #ff5252;
+    --pink: #ff4081;
+    
+    --padding: 16px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Переменные для Светлой темы (Инвертируем цвета по стандартам WCAG) */
+body.light-theme {
+    --background: #f4f5f8;
+    --surface: #ffffff;
+    --surface-variant: #e4e6eb;
+    --text: #1c1e21;
+    --text-muted: #606770;
+    
+    --purple: #6200ee;
+    --purple-dark: #3700b3; /* Более контрастный темный оттенок для текста на светлом фоне */
+    --accent: #018786;
+    --coral: #d32f2f;
+    --pink: #c51162;
+}
+
+/* Добавим плавный переход для смены цвета темы во всем приложении */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Сброс базовых стилей для мобилок */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent; /* Убираем синюю рамку при клике на iOS */
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    padding-top: 60px; /* Место под фиксированную шапку сайта */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Учет безопасных зон современных экранов (челки/вырезы) */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   2. ШАПКА САЙТА (HEADER) И НАВИГАЦИЯ
+   ========================================================================== */
+.site-header {
+    background-color: var(--surface);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(43, 27, 23, 0.05);
+    border-bottom: 1px solid var(--surface-variant);
+    padding-top: env(safe-area-inset-top); /* Учет челки на iOS */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 var(--padding);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--text);
+}
+
+.logo span {
+    color: var(--purple-dark);
+    background: linear-gradient(135deg, var(--purple-dark), #AB47BC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    width: var(--touch-target);
+    height: var(--touch-target);
+    background: none;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.icon-btn:active {
+    background-color: var(--surface-variant);
+    transform: scale(0.92);
+}
+
+/* Выпадающий поиск */
+.search-bar-dropdown {
+    padding: 12px var(--padding);
+    background-color: var(--surface);
+    border-top: 1px solid var(--surface-variant);
+    transition: var(--transition);
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--surface-variant);
+    border-radius: var(--radius-md);
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    border-color: var(--purple-dark);
+    background-color: var(--surface);
+    box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.15);
+}
+
+/* Мобильное выпадающее меню навигации */
+.site-nav {
+    background-color: var(--surface);
+    border-top: 1px solid var(--surface-variant);
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.site-nav ul {
+    list-style: none;
+    padding: 8px 0;
+}
+
+.site-nav li a {
+    display: block;
+    padding: 14px var(--padding);
+    font-size: 16px;
+    font-weight: 600;
+    border-left: 4px solid transparent;
+    transition: var(--transition);
+}
+
+.site-nav li a:active,
+.site-nav li a.active {
+    background-color: var(--bg);
+    color: var(--purple-dark);
+    border-left-color: var(--purple-dark);
+}
+
+/* Служебный класс для скрытия */
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   3. ОСНОВНОЙ КОНТЕНТ (MAIN, БАННЕРЫ, СЕКЦИИ)
+   ========================================================================== */
+.main-content {
+    flex: 1; /* Чтобы футер всегда прижимался к низу */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 32px;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    margin: var(--padding);
+    padding: 24px var(--padding);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 15px rgba(209, 196, 233, 0.3);
+}
+
+.hero-section h1 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.hero-section p {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--padding);
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: var(--padding);
+}
+
+/* Если в шапке секции нет отступа, используем для заголовков без шапок */
+.section-container > .section-title {
+    padding-left: var(--padding);
+}
+
+.see-all {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--purple-dark);
+}
+
+/* ==========================================================================
+   4. КОМПОНЕНТЫ (ЧИПСЫ, КАРТОЧКИ, НОВОСТИ)
+   ========================================================================== */
+
+/* ЧИПСЫ С ГОРИЗОНТАЛЬНЫМ СВАЙПОМ (Исправлено!) */
+.chip-row {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Плавность скролла на тач-экранах */
+    gap: 8px;
+    padding: 4px var(--padding) 12px;
+    width: 100%;
+}
+
+.chip-row::-webkit-scrollbar {
+    display: none; /* Скрываем некрасивый системный скроллбар */
+}
+
+.chip {
+    flex-shrink: 0; /* Компонент не сжимается в ряду */
+    white-space: nowrap; /* Текст в одну строку */
+    background-color: var(--surface);
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    border: 1px solid var(--surface-variant);
+    transition: var(--transition);
+}
+
+.chip:active {
+    background-color: var(--purple);
+    border-color: var(--purple-dark);
+    transform: scale(0.95);
+}
+
+/* АДАПТИВНАЯ СЕТКА КАРТОЧЕК В 2 КОЛОНКИ (Исправлено!) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ровно 2 колонки */
+    gap: 12px;
+    padding: 0 var(--padding);
+}
+
+.anime-card {
+    background-color: var(--surface);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(43, 27, 23, 0.03);
+    border: 1px solid var(--surface-variant);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.anime-card:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(43, 27, 23, 0.02);
+}
+
+.card-image-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Соотношение сторон как у реальных аниме-постеров */
+    background: linear-gradient(45deg, var(--surface-variant), var(--coral));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.card-info {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.card-info h3 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    /* Обрезка длинного текста троеточием на 2 строке */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-badge {
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    background-color: var(--bg);
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+}
+
+/* Ссылка на всю карточку */
+.card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* СПИСОК НОВОСТЕЙ */
+.news-list {
+    padding: 0 var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-item-preview {
+    background-color: var(--surface);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--surface-variant);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.news-date {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--purple-dark);
+}
+
+.news-item-preview h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.news-item-preview p {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.stretched-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-indent: -9999px; /* Скрываем текст ссылки визуально */
+    z-index: 1;
+}
+
+/* ==========================================================================
+   5. ПОДВАЛ (FOOTER) И СЛУЖЕБНЫЕ ЭЛЕМЕНТЫ
+   ========================================================================== */
+.site-footer {
+    background-color: var(--surface);
+    padding: 24px var(--padding) calc(24px + env(safe-area-inset-bottom));
+    text-align: center;
+    border-top: 1px solid var(--surface-variant);
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--purple-dark);
+}
+
+/* ТВОЙ КОМПОНЕНТ ТОСТОВ */
+.toast {
+    position: fixed;
+    bottom: calc(24px + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: var(--text);
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: var(--radius-lg);
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 2000;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================
+   СТИЛИ ДЛЯ ПАНЕЛИ ФИЛЬТРОВ И РЕЖИМОВ ОТОБРАЖЕНИЯ
+   ========================================== */
+
+/* Панель управления (Фильтры + Сортировка) */
+.filter-panel {
+    background-color: var(--surface);
+    border: 1px solid var(--surface-variant);
+    border-radius: var(--radius-md);
+    margin: 0 var(--padding) 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.filter-select {
+    flex: 1;
+    background-color: var(--background);
+    border: 1px solid var(--surface-variant);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    padding: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+}
+
+/* Кнопка переключения вида (Сетка/Список) */
+.view-toggle-btn {
+    background-color: var(--background);
+    border: 1px solid var(--surface-variant);
+    color: var(--text);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+.view-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+/* Модификатор для переключения каталога в режим СПИСКА (List View) */
+.anime-grid.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.anime-grid.list-view .anime-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background-color: var(--surface);
+    border: 1px solid var(--surface-variant);
+    border-radius: var(--radius-md);
+}
+
+/* Корректируем размеры элементов внутри карточки в режиме списка */
+.anime-grid.list-view .anime-poster {
+    width: 60px;
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-sm);
+}
+
+.anime-grid.list-view .anime-card-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.anime-grid.list-view .anime-card h3 {
+    font-size: 15px;
+    margin: 0;
+}
+
+.anime-grid.list-view .anime-meta {
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Класс для скрытия отфильтрованных карточек */
+.anime-card.hidden-card {
+    display: none !important;
+}
+
+/* Стили для кастомных интерактивных тегов-чипсов */
+.chip.selectable {
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition);
+}
+.chip.selectable.active-tag {
+    background-color: var(--purple);
+    color: #FFFFFF;
+    border-color: var(--purple-dark);
+}
+document.addEventListener('DOMContentLoaded', () => {
+    // ==========================================================================
+    // 1. ИНИЦИАЛИЗАЦИЯ И ПОИСК ЭЛЕМЕНТОВ ШАПКИ
+    // ==========================================================================
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const siteNav = document.getElementById('siteNav');
+    const searchToggleBtn = document.getElementById('searchToggleBtn');
+    const searchDropdown = document.getElementById('searchDropdown');
+    const toast = document.getElementById('toast');
+
+    // ==========================================================================
+    // 2. ЛОГИКА ВЫПАДАЮЩИХ ПАНЕЛЕЙ (МЕНЮ И ПОИСК)
+    // ==========================================================================
+    
+    // Переключение мобильного меню навигации
+    if (menuToggleBtn && siteNav) {
+        menuToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            siteNav.classList.toggle('hidden');
+            
+            // Если открываем меню, скрываем панель поиска, чтобы не мешала
+            if (!siteNav.classList.contains('hidden') && searchDropdown) {
+                searchDropdown.classList.add('hidden');
+            }
+        });
+    }
+
+    // Переключение выпадающей панели быстрого поиска
+    if (searchToggleBtn && searchDropdown) {
+        searchToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchDropdown.classList.toggle('hidden');
+            
+            // Если открываем поиск, скрываем меню навигации
+            if (!searchDropdown.classList.contains('hidden') && siteNav) {
+                siteNav.classList.add('hidden');
+                // Автоматически ставим фокус в инпут для удобства ввода
+                const input = searchDropdown.querySelector('.search-input');
+                if (input) input.focus();
+            }
+        });
+    }
+
+    // Клик за пределами шапки автоматически закрывает меню и поиск
+    document.addEventListener('click', (e) => {
+        if (siteNav && !siteNav.classList.contains('hidden') && !siteNav.contains(e.target) && e.target !== menuToggleBtn) {
+            siteNav.classList.add('hidden');
+        }
+        if (searchDropdown && !searchDropdown.classList.contains('hidden') && !searchDropdown.contains(e.target) && e.target !== searchToggleBtn) {
+            searchDropdown.classList.add('hidden');
+        }
+    });
+
+    // ==========================================================================
+    // 3. АВТОМАТИЧЕСКАЯ ПОДСВЕТКА АКТИВНОЙ ССЫЛКИ
+    // ==========================================================================
+    const currentUrl = window.location.pathname;
+    const navLinks = document.querySelectorAll('.site-nav a, .chip-row a');
+
+    navLinks.forEach(link => {
+        // Убираем старый класс активности со всех ссылок
+        link.classList.remove('active');
+        
+        const hrefAttr = link.getAttribute('href');
+        if (!hrefAttr) return;
+
+        // Нормализуем пути для точного сравнения (убираем относительные переходы вроде ../)
+        const cleanHref = hrefAttr.replace(/\.\.\//g, '');
+        
+        // Проверяем, содержит ли текущий URL имя файла из ссылки
+        if (currentUrl.includes(cleanHref) && cleanHref !== '') {
+            link.classList.add('active');
+        } else if (currentUrl.endsWith('/') && (cleanHref === 'index.html' || cleanHref === '')) {
+            // Если открыт корень сайта, подсвечиваем "Главную"
+            if (link.textContent.trim() === 'Главная') {
+                link.classList.add('active');
+            }
+        }
+    });
+
+    // ==========================================================================
+    // 4. КОМПОНЕНТ УВЕДОМЛЕНИЙ (TOAST)
+    // ==========================================================================
+    window.showToast = function(message, duration = 3000) {
+        if (!toast) return;
+        
+        toast.textContent = message;
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, duration);
+    };
+
+    // Автоматическая оптимизация картинок на лету (из твоего оригинального кода)
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.loading = 'lazy'; // Ленивая загрузка для экономии мобильного трафика
+        if (!img.alt) {
+            const fileName = img.src.split('/').pop().split('.')[0];
+            img.alt = decodeURIComponent(fileName) || 'Изображение вики';
+        }
+    });
+    // ==========================================
+// СМЕНА ТЕМЫ ОФОРМЛЕНИЯ (DARK/LIGHT MODE)
+// ==========================================
+
+function initTheme() {
+    // Проверяем, сохранил ли пользователь тему ранее
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Если сохранена светлая тема, накатываем класс на body
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        updateThemeButtonIcon('light');
+    } else {
+        updateThemeButtonIcon('dark');
+    }
+}
+
+window.toggleTheme = function() {
+    const isLight = document.body.classList.toggle('light-theme');
+    
+    if (isLight) {
+        localStorage.setItem('theme', 'light');
+        updateThemeButtonIcon('light');
+        window.showToast('Включена светлая тема ☀️');
+    } else {
+        localStorage.setItem('theme', 'dark');
+        updateThemeButtonIcon('dark');
+        window.showToast('Включена темная тема 🌙');
+    }
+};
+
+function updateThemeButtonIcon(theme) {
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (!themeBtn) return;
+    
+    // Меняем иконку на кнопке в зависимости от активной темы
+    themeBtn.innerHTML = theme === 'light' ? '🌙' : '☀️';
+    themeBtn.setAttribute('aria-label', theme === 'light' ? 'Включить темную тему' : 'Включить светлую тему');
+}
+
+// Запускаем инициализацию темы при каждой загрузке скрипта
+document.addEventListener('DOMContentLoaded', initTheme);
+
+// ==========================================
+// КРУТОЙ ДВИЖОК ПРОФИЛЯ, СТАТУСОВ И ПРОГРЕССА
+// ==========================================
+
+// Структура базы данных в localStorage:
+// 'anime_tracker' -> { 'Тайтл': { status: 'watching', episodes: 4, total: 24 } }
+
+// 1. Изменение статуса или добавление аниме в список трекинга
+window.updateAnimeTracker = function(animeTitle, newStatus, totalEps = 12) {
+    let tracker = JSON.parse(localStorage.getItem('anime_tracker')) || {};
+    
+    if (!tracker[animeTitle]) {
+        // Если тайтла еще нет в трекере, инициализируем его
+        tracker[animeTitle] = {
+            status: newStatus,
+            episodes: 0,
+            total: totalEps
+        };
+    } else {
+        // Если есть, просто обновляем статус
+        tracker[animeTitle].status = newStatus;
+        // Если перевели в "Просмотрено", автоматически заполняем все серии
+        if (newStatus === 'completed') {
+            tracker[animeTitle].episodes = tracker[animeTitle].total;
+        }
+    }
+    
+    localStorage.setItem('anime_tracker', JSON.stringify(tracker));
+    window.showToast(`Статус «${animeTitle}» обновлен! 📝`);
+    
+    // Обновляем счетчики на карточках, если мы в каталоге
+    if (typeof window.syncCatalogProgress === 'function') window.syncCatalogProgress();
+};
+
+// 2. Индикатор прогресса в один клик (+1 серия)
+window.incrementEpisode = function(animeTitle, event) {
+    if (event) event.stopPropagation(); // Стопаем переход по ссылке карточки
+    
+    let tracker = JSON.parse(localStorage.getItem('anime_tracker')) || {};
+    
+    // Если аниме еще не отслеживается, принудительно добавляем его в список "Смотрю"
+    if (!tracker[animeTitle]) {
+        tracker[animeTitle] = { status: 'watching', episodes: 1, total: 12 };
+    } else {
+        if (tracker[animeTitle].episodes < tracker[animeTitle].total) {
+            tracker[animeTitle].episodes++;
+            // Если досмотрел до конца — автоматом переводим в статус "Просмотрено"
+            if (tracker[animeTitle].episodes === tracker[animeTitle].total) {
+                tracker[animeTitle].status = 'completed';
+                window.showToast(`Поздравляем! Вы посмотрели «${animeTitle}» 🎉`);
+            }
+        } else {
+            window.showToast(`Уже просмотрены все серии!`);
+            return;
+        }
+    }
+    
+    localStorage.setItem('anime_tracker', JSON.stringify(tracker));
+    if (typeof window.syncCatalogProgress === 'function') window.syncCatalogProgress();
+    
+    // Если мы на странице профиля, перерисовываем текущую вкладку
+    const activeTab = document.querySelector('.tab-btn.active');
+    if (activeTab) {
+        const currentCategory = activeTab.getAttribute('data-category');
+        if (['watching', 'completed', 'plan_to_watch', 'on_hold', 'dropped'].includes(currentCategory)) {
+            window.renderTrackerTab(currentCategory);
+        }
+    }
+};
+
+// 3. Синхронизация отображения прогресса прямо внутри каталога
+window.syncCatalogProgress = function() {
+    let tracker = JSON.parse(localStorage.getItem('anime_tracker')) || {};
+    const progressBadges = document.querySelectorAll('.catalog-progress-inline');
+    
+    progressBadges.forEach(badge => {
+        const title = badge.getAttribute('data-anime-title');
+        if (tracker[title]) {
+            const current = tracker[title].episodes;
+            const total = tracker[title].total;
+            badge.innerHTML = `🍿 Эпизоды: <b>${current}/${total}</b> <button class="plus-one-btn" onclick="window.incrementEpisode('${title}', event)">+1</button>`;
+        } else {
+            badge.innerHTML = `<button class="start-track-btn" onclick="window.incrementEpisode('${title}', event)">➕ Начать просмотр</button>`;
+        }
+    });
+};
+
+// 4. Логика переключения 5 вкладок на странице профиля
+window.switchProfileTabNew = function(element, statusCategory) {
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    element.classList.add('active');
+    
+    window.renderTrackerTab(statusCategory);
+};
+
+// 5. Отрисовка списков в профиле с учетом статистики
+window.renderTrackerTab = function(statusCategory) {
+    const container = document.getElementById('savedListContainer');
+    if (!container) return;
+    
+    let tracker = JSON.parse(localStorage.getItem('anime_tracker')) || {};
+    container.innerHTML = '';
+    
+    let count = 0;
+    
+    for (let title in tracker) {
+        if (tracker[title].status === statusCategory) {
+            count++;
+            const itemHTML = `
+                <div class="saved-item">
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <span class="saved-item-title">${title}</span>
+                        <span style="font-size: 13px; color: var(--text-muted)">Серии: ${tracker[title].episodes} / ${tracker[title].total}</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button class="plus-one-btn" onclick="window.incrementEpisode('${title}', event)">+1</button>
+                        <button class="btn-delete" onclick="window.deleteTrackerItem('${title}', '${statusCategory}')" aria-label="Удалить">🗑️</button>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', itemHTML);
+        }
+    }
+    
+    if (count === 0) {
+        container.innerHTML = `<div class="empty-state"><p>В этой категории пока ничего нет 💨</p></div>`;
+    }
+    
+    // Обновляем общие цифры статистики на странице профиля
+    window.updateProfileStats();
+};
+
+// 6. Удаление из трекера
+window.deleteTrackerItem = function(title, currentCategory) {
+    let tracker = JSON.parse(localStorage.getItem('anime_tracker')) || {};
+    delete tracker[title];
+    localStorage.setItem('anime_tracker', JSON.stringify(tracker));
+    window.showToast('Удалено из списков 🗑️');
+    window.renderTrackerTab(currentCategory);
+};
+
+// 7. Подсчет общей статистики для профиля
+window.updateProfileStats = function() {
+    let tracker = JSON.parse(localStorage.getItem('anime_tracker')) || {};
+    let stats = { watching: 0, completed: 0, plan_to_watch: 0, dropped: 0 };
+    
+    for (let title in tracker) {
+        if (stats[tracker[title].status] !== undefined) {
+            stats[tracker[title].status]++;
+        }
+    }
+    
+    // Подставляем цифры в HTML, если элементы существуют
+    if(document.getElementById('stat-watching')) document.getElementById('stat-watching').innerText = stats.watching;
+    if(document.getElementById('stat-completed')) document.getElementById('stat-completed').innerText = stats.completed;
+    if(document.getElementById('stat-plan')) document.getElementById('stat-plan').innerText = stats.plan_to_watch;
+    if(document.getElementById('stat-dropped')) document.getElementById('stat-dropped').innerText = stats.dropped;
+};
+
+// Автоматически запускаем синхронизацию прогресса в каталогах при загрузка страниц
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof window.syncCatalogProgress === 'function') window.syncCatalogProgress();
+    if (typeof window.updateProfileStats === 'function') window.updateProfileStats();
+});
+});

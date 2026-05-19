@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FFF2E0">
+    <title>Animepedia - главная</title>
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body class="home-page">
+    <header class="app-header home-header">
+        <div>
+            <a class="brand" href="Главная страница.html">Anime<span>pedia</span></a>
+            <p class="header-subtitle">Аниме, манга, персонажи</p>
+        </div>
+        <button class="icon-btn profile-btn" type="button" data-toast="Профиль в разработке" aria-label="Профиль">👤</button>
+    </header>
+
+    <main id="mainContent" class="app-shell home-shell">
+        <section class="home-hero" aria-labelledby="homeTitle">
+            <div class="hero-copy">
+                <p class="page-kicker">Мобильная энциклопедия</p>
+                <h1 id="homeTitle">Найди следующий тайтл без лишних кликов</h1>
+                <p class="hero-lead">Каталог, персонажи, манга и новости собраны в один быстрый главный экран.</p>
+            </div>
+
+            <form class="search-card home-search" data-search-form role="search">
+                <span aria-hidden="true">🔍</span>
+                <input type="search" placeholder="Поиск по аниме, манге, героям" aria-label="Поиск по сайту">
+                <button class="search-submit" type="submit">Найти</button>
+            </form>
+
+            <div class="quick-grid" aria-label="Быстрые разделы">
+                <a class="quick-tile" href="Каталог аниме.html">
+                    <span aria-hidden="true">🎬</span>
+                    <strong>Аниме</strong>
+                    <small>1240+</small>
+                </a>
+                <a class="quick-tile" href="Каталог манги.html">
+                    <span aria-hidden="true">📚</span>
+                    <strong>Манга</strong>
+                    <small>860+</small>
+                </a>
+                <a class="quick-tile" href="Каталог персонажей.html">
+                    <span aria-hidden="true">⭐</span>
+                    <strong>Герои</strong>
+                    <small>3800+</small>
+                </a>
+                <a class="quick-tile" href="Новости.html">
+                    <span aria-hidden="true">📰</span>
+                    <strong>Новости</strong>
+                    <small>сегодня</small>
+                </a>
+            </div>
+        </section>
+
+        <section class="feature-panel" aria-labelledby="featureTitle">
+            <a class="feature-cover" href="Аниме Карточка.html" data-search="поднятие уровня одиночку solo leveling">
+                <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&w=900&q=80" alt="Иллюстрация популярного аниме">
+                <span class="feature-rank">#1 недели</span>
+            </a>
+            <div class="feature-content">
+                <p class="page-kicker">Сейчас читают</p>
+                <h2 id="featureTitle">Поднятие уровня в одиночку</h2>
+                <p>Экшен, темное фэнтези, охотники. Быстрый вход в карточку с рейтингом, описанием и связанными героями.</p>
+                <div class="feature-actions">
+                    <a href="Аниме Карточка.html" class="btn-primary">Открыть карточку</a>
+                    <button class="round-btn" type="button" data-favorite data-favorite-id="solo-leveling" aria-label="Добавить в избранное">♡</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="popularTitle">
+            <div class="section-header clean-header">
+                <div>
+                    <p class="page-kicker">Каталог</p>
+                    <h2 id="popularTitle">Популярное</h2>
+                </div>
+                <a href="Каталог аниме.html" class="section-link">Все</a>
+            </div>
+
+            <div class="vertical-feed">
+                <a href="Аниме Карточка.html" class="feed-card" data-search="магическая битва дзюдзюцу">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80" alt="Постер аниме Магическая битва">
+                    <div>
+                        <strong>Магическая битва 2</strong>
+                        <p>TV-сериал • экшен • рейтинг 9.4</p>
+                    </div>
+                    <span aria-hidden="true">›</span>
+                </a>
+                <a href="Аниме Карточка.html" class="feed-card" data-search="фрирен фэнтези">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=400&q=80" alt="Постер фэнтези аниме">
+                    <div>
+                        <strong>Фрирен</strong>
+                        <p>TV-сериал • фэнтези • рейтинг 9.2</p>
+                    </div>
+                    <span aria-hidden="true">›</span>
+                </a>
+                <a href="Карточка манги.html" class="feed-card" data-search="человек бензопила манга">
+                    <img src="https://images.unsplash.com/photo-1618519764620-7403abdbdfe9?auto=format&fit=crop&w=400&q=80" alt="Обложка манги">
+                    <div>
+                        <strong>Человек-бензопила</strong>
+                        <p>Манга • боевик • рейтинг 9.1</p>
+                    </div>
+                    <span aria-hidden="true">›</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="genresTitle">
+            <div class="section-header clean-header">
+                <div>
+                    <p class="page-kicker">Быстрый выбор</p>
+                    <h2 id="genresTitle">Жанры</h2>
+                </div>
+            </div>
+            <div class="genre-list">
+                <a href="Каталог аниме.html" class="genre-pill">Экшен</a>
+                <a href="Каталог аниме.html" class="genre-pill">Романтика</a>
+                <a href="Каталог аниме.html" class="genre-pill">Фэнтези</a>
+                <a href="Каталог аниме.html" class="genre-pill">Повседневность</a>
+                <a href="Каталог аниме.html" class="genre-pill">Драма</a>
+                <a href="Каталог аниме.html" class="genre-pill">Комедия</a>
+            </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="newsTitle">
+            <div class="section-header clean-header">
+                <div>
+                    <p class="page-kicker">Обновления</p>
+                    <h2 id="newsTitle">Новости</h2>
+                </div>
+                <a href="Новости.html" class="section-link">Читать</a>
+            </div>
+            <div class="news-stack">
+                <a href="Новости.html" class="news-row" data-search="анонс третий сезон">
+                    <time datetime="2026-05-10">10 мая</time>
+                    <strong>Анонсирован новый сезон популярного экшен-тайтла</strong>
+                </a>
+                <a href="Новости.html" class="news-row" data-search="топ аниме весна">
+                    <time datetime="2026-05-12">12 мая</time>
+                    <strong>Топ весны: что добавить в список просмотра</strong>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Основная навигация">
+        <a href="Главная страница.html" class="nav-item" data-nav="home">
+            <span>⌂</span>
+            <small>Главная</small>
+        </a>
+        <a href="Каталог аниме.html" class="nav-item" data-nav="catalog">
+            <span>▦</span>
+            <small>Каталог</small>
+        </a>
+        <a href="Каталог персонажей.html" class="nav-item" data-nav="people">
+            <span>☆</span>
+            <small>Герои</small>
+        </a>
+        <a href="Новости.html" class="nav-item" data-nav="news">
+            <span>◷</span>
+            <small>Новости</small>
+        </a>
+        <a href="О проекте.html" class="nav-item" data-nav="menu">
+            <span>☰</span>
+            <small>Меню</small>
+        </a>
+    </nav>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="mobile.js"></script>
+</body>
+</html>
