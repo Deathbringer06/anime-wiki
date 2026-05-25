@@ -96,6 +96,13 @@
             <div class="wiki-meta-box" style="margin-top: 8px;">
                 <span>⏱ 5 мин. чтения</span>
                 <span>👁 1.2к просмотров</span>
+                <span>✏️ Обновлено 24 мая 2026</span>
+            </div>
+
+            <div style="display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;">
+                <span style="background: var(--surface); padding: 4px 10px; border-radius: 12px; font-size: 12px; color: var(--text-muted); font-weight: 600;">📚 История</span>
+                <span style="background: var(--surface); padding: 4px 10px; border-radius: 12px; font-size: 12px; color: var(--text-muted); font-weight: 600;">🎬 Аниме</span>
+                <span style="background: var(--surface); padding: 4px 10px; border-radius: 12px; font-size: 12px; color: var(--text-muted); font-weight: 600;">🌍 Культура</span>
             </div>
         </div>
 
@@ -125,6 +132,46 @@
                 🔗 Поделиться статьёй
             </button>
         </div>
+
+        <section style="padding: 0 var(--padding); margin-top: 20px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Об этой статье</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Автор</div>
+                    <div style="font-size: 14px; font-weight: 700;">Dr. Anime (Модератор)</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Последнее обновление</div>
+                    <div style="font-size: 14px; font-weight: 700;">24 мая 2026</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Статус</div>
+                    <div style="font-size: 14px; font-weight: 700;">✅ Проверено</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Рейтинг статьи</div>
+                    <div style="font-size: 14px; font-weight: 700;">⭐⭐⭐⭐⭐ 4.8</div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Была ли полезна эта статья?</h2>
+            <div style="display: flex; gap: 8px;">
+                <button class="btn-primary" style="flex: 1; background-color: var(--surface); color: var(--text); border: 1px solid var(--surface-variant);" onclick="window.showToast('Спасибо за голос! 👍')">👍 Полезна (243)</button>
+                <button class="btn-secondary" onclick="window.showToast('Ваш голос учтен 👎')">👎 Не очень (12)</button>
+            </div>
+        </section>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px; margin-bottom: 30px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Похожие статьи</h2>
+            <div class="chip-row" style="flex-direction: column; gap: 8px;">
+                <a href="wiki-article.html" class="chip" style="text-align: left; display: block;">📚 Влияние аниме на мировую культуру</a>
+                <a href="wiki-article.html" class="chip" style="text-align: left; display: block;">🎨 Техники и процесс создания аниме</a>
+                <a href="wiki-article.html" class="chip" style="text-align: left; display: block;">👨‍🎨 Самые влиятельные режиссеры аниме</a>
+                <a href="wiki-article.html" class="chip" style="text-align: left; display: block;">🏆 Топ-10 аниме, получивших премии</a>
+            </div>
+        </section>
 
     </main>
 
