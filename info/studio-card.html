@@ -80,6 +80,99 @@
         .btn-primary-full:active {
             transform: scale(0.97);
         }
+
+        /* Professional card polish layer */
+        main.main-content {
+            gap: 18px !important;
+        }
+        main.main-content > div:first-child {
+            margin: 10px var(--padding) 0;
+            padding: 10px 12px !important;
+            background: rgba(255, 255, 255, 0.62);
+            border: 1px solid rgba(245, 230, 211, 0.9);
+            border-radius: var(--radius-md);
+            box-shadow: 0 8px 24px rgba(43, 27, 23, 0.04);
+        }
+        .details-poster-wrapper {
+            margin-top: 2px;
+        }
+        .details-poster {
+            position: relative;
+            min-height: 188px;
+            overflow: hidden;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px;
+            color: #fff;
+            font-size: 18px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+            background:
+                radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.34), transparent 28%),
+                linear-gradient(145deg, rgba(43, 27, 23, 0.78), rgba(126, 87, 194, 0.88)),
+                linear-gradient(135deg, var(--purple-dark), var(--accent)) !important;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            box-shadow: 0 18px 40px rgba(126, 87, 194, 0.22);
+        }
+        .details-poster::after {
+            content: "";
+            position: absolute;
+            inset: auto -12% -42% 28%;
+            height: 72%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            transform: rotate(-10deg);
+        }
+        main.main-content > div[style*="padding: 0 var(--padding)"] h1 {
+            line-height: 1.16 !important;
+        }
+        .meta-info-block {
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.86);
+            border-color: rgba(245, 230, 211, 0.95);
+            box-shadow: 0 10px 28px rgba(43, 27, 23, 0.045);
+        }
+        .meta-item {
+            min-width: 0;
+            padding: 2px 8px;
+        }
+        .meta-value {
+            font-size: clamp(13px, 3.6vw, 15px);
+            line-height: 1.25;
+            overflow-wrap: anywhere;
+        }
+        .meta-label {
+            letter-spacing: 0.04em;
+        }
+        .btn-primary-full {
+            min-height: 50px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--purple-dark), #9c5fd6);
+            box-shadow: 0 12px 26px rgba(126, 87, 194, 0.24);
+        }
+        .studio-description {
+            background: rgba(255, 255, 255, 0.58);
+            margin: 0 var(--padding);
+            padding: 16px !important;
+            border: 1px solid rgba(245, 230, 211, 0.92);
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 28px rgba(43, 27, 23, 0.035);
+        }
+        section[style*="padding: 0 var(--padding)"] > div[style*="display: grid"] > div,
+        section[style*="padding: 0 var(--padding)"] > div[style*="display: flex"] > div,
+        section[style*="padding: 0 var(--padding)"] > div[style*="background-color"] {
+            background: rgba(255, 255, 255, 0.86) !important;
+            border-color: rgba(245, 230, 211, 0.95) !important;
+            box-shadow: 0 10px 26px rgba(43, 27, 23, 0.045);
+        }
+        section > h2 {
+            color: var(--text);
+            line-height: 1.25;
+        }
+        @media (max-width: 360px) {
+            .meta-info-block {
+                padding: 12px 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -158,6 +251,87 @@
                 Японская анимационная студия, основанная Масао Маруямой, бывшим продюсером и сооснователем легендарной студии Madhouse. MAPPA ворвалась в индустрию с амбициозными проектами и быстро заслужила репутацию студии, способной создавать комплексный экшен с невероятно сложной и динамичной 3D/2D графикой. Студия известна тем, что берётся за производство культовых и трудоёмких франшиз, обеспечивая высочайшую планку детализации боёв и кинематографичную режиссуру.
             </p>
         </article>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Информация о студии</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Основана</div>
+                    <div style="font-size: 14px; font-weight: 700;">11 июня 2011</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Местоположение</div>
+                    <div style="font-size: 14px; font-weight: 700;">Токио, Япония</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Президент</div>
+                    <div style="font-size: 14px; font-weight: 700;">Масао Маруяма</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Сотрудников</div>
+                    <div style="font-size: 14px; font-weight: 700;">200+ человек</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Филиалы</div>
+                    <div style="font-size: 14px; font-weight: 700;">Osaka, Manila</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Родительская компания</div>
+                    <div style="font-size: 14px; font-weight: 700;">Ador Inc.</div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Ключевые персоналии</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--purple-dark); font-weight: 700; margin-bottom: 2px;">👔 Масао Маруяма (Президент/Продюсер)</div>
+                    <div style="font-size: 13px; color: var(--text-muted);">Основатель, бывший продюсер Madhouse. Отвечает за выбор проектов.</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--purple-dark); font-weight: 700; margin-bottom: 2px;">🎬 Синтаро Асанума (Режиссер)</div>
+                    <div style="font-size: 13px; color: var(--text-muted);">Выпускник Kyoto Animation. Руководит производством масштабных проектов.</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--purple-dark); font-weight: 700; margin-bottom: 2px;">✍️ Кэйтаро Окамото (Главный сценарист)</div>
+                    <div style="font-size: 13px; color: var(--text-muted);">Отвечает за адаптацию крупных источников в сценарий.</div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Направления работы студии</h2>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="background-color: var(--surface); padding: 10px 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant); font-size: 13px; font-weight: 700;">
+                    🎬 <strong>Аниме для ТВ:</strong> Сезонные проекты, многосезонные сериалы
+                </div>
+                <div style="background-color: var(--surface); padding: 10px 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant); font-size: 13px; font-weight: 700;">
+                    🎥 <strong>Полнометражные фильмы:</strong> Кинематографичные проекты, триллогии
+                </div>
+                <div style="background-color: var(--surface); padding: 10px 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant); font-size: 13px; font-weight: 700;">
+                    📱 <strong>Цифровой контент:</strong> Web-аниме, короткие видео для платформ
+                </div>
+                <div style="background-color: var(--surface); padding: 10px 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant); font-size: 13px; font-weight: 700;">
+                    🎮 <strong>Видеоигры:</strong> Кинематики, вводные ролики, интерактивный контент
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Технологии и инструменты</h2>
+            <div style="background-color: var(--surface); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant); font-size: 14px; line-height: 1.6;">
+                <p style="margin-bottom: 8px;">
+                    <strong>3D-технологии:</strong> Активно использует 3D-моделирование для сложных сцен боёв и движения камер, что позволяет достичь кинематографичности.
+                </p>
+                <p style="margin-bottom: 8px;">
+                    <strong>Техника гибридного рендеринга:</strong> Комбинирует 2D и 3D элементы так, чтобы сохранить традиционную эстетику аниме.
+                </p>
+                <p>
+                    <strong>Программное обеспечение:</strong> Использует CLIP Studio Paint, Blender, Maya, Motion Builder и собственные разработки.
+                </p>
+            </div>
+        </section>
 
         <section class="section-container" style="margin-top: 8px; margin-bottom: 30px;">
             <h2 class="section-title">Популярные релизы студии</h2>
