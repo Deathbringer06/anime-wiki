@@ -92,6 +92,113 @@
         .btn-primary:active, .btn-secondary:active {
             transform: scale(0.96);
         }
+
+        /* Professional card polish layer */
+        main.main-content {
+            gap: 18px !important;
+        }
+        main.main-content > div:first-child {
+            margin: 10px var(--padding) 0;
+            padding: 10px 12px !important;
+            background: rgba(255, 255, 255, 0.62);
+            border: 1px solid rgba(245, 230, 211, 0.9);
+            border-radius: var(--radius-md);
+            box-shadow: 0 8px 24px rgba(43, 27, 23, 0.04);
+        }
+        .details-poster-wrapper {
+            margin-top: 2px;
+        }
+        .details-poster {
+            position: relative;
+            min-height: 188px;
+            overflow: hidden;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px;
+            color: #fff;
+            font-size: 18px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+            background:
+                radial-gradient(circle at 20% 14%, rgba(255, 255, 255, 0.3), transparent 28%),
+                linear-gradient(145deg, rgba(97, 65, 53, 0.88), rgba(255, 112, 112, 0.74)),
+                linear-gradient(135deg, var(--coral), var(--pink)) !important;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            box-shadow: 0 18px 40px rgba(110, 70, 70, 0.2);
+        }
+        .details-poster::after {
+            content: "";
+            position: absolute;
+            inset: auto -10% -44% 24%;
+            height: 74%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            transform: rotate(-10deg);
+        }
+        .section-title {
+            padding-right: var(--padding);
+            line-height: 1.22;
+        }
+        .meta-info-block {
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.86);
+            border-color: rgba(245, 230, 211, 0.95);
+            box-shadow: 0 10px 28px rgba(43, 27, 23, 0.045);
+        }
+        .meta-item {
+            min-width: 0;
+            padding: 2px 8px;
+        }
+        .meta-value {
+            font-size: clamp(13px, 3.6vw, 16px);
+            line-height: 1.25;
+            overflow-wrap: anywhere;
+        }
+        .meta-label {
+            letter-spacing: 0.04em;
+        }
+        .action-button-group {
+            gap: 10px;
+        }
+        .btn-primary,
+        .btn-secondary {
+            min-height: 50px;
+            border-radius: 14px;
+            box-shadow: 0 10px 22px rgba(43, 27, 23, 0.06);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--purple-dark), #9c5fd6);
+            box-shadow: 0 12px 26px rgba(126, 87, 194, 0.24);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.86);
+        }
+        .anime-description {
+            background: rgba(255, 255, 255, 0.58);
+            margin: 0 var(--padding);
+            padding: 16px !important;
+            border: 1px solid rgba(245, 230, 211, 0.92);
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 28px rgba(43, 27, 23, 0.035);
+        }
+        section[style*="padding: 0 var(--padding)"] > div[style*="display: grid"] > div,
+        section[style*="padding: 0 var(--padding)"] > div[style*="display: flex"] > div,
+        section[style*="padding: 0 var(--padding)"] > div[style*="background-color"] {
+            background: rgba(255, 255, 255, 0.86) !important;
+            border-color: rgba(245, 230, 211, 0.95) !important;
+            box-shadow: 0 10px 26px rgba(43, 27, 23, 0.045);
+        }
+        section > h2 {
+            color: var(--text);
+            line-height: 1.25;
+        }
+        @media (max-width: 360px) {
+            .action-button-group {
+                flex-direction: column;
+            }
+            .meta-info-block {
+                padding: 12px 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -166,6 +273,67 @@
                 Легендарное темное фэнтези, созданное Кентаро Миурой. История рассказывает о жизни Гатса, прирожденного наемника, известного как Черный Мечник. Проклятый зловещим клеймом, которое привлекает к нему демонов каждую ночь, Гатс путешествует по раздираемому войнами миру в поисках мести своему бывшему командиру и другу Гриффиту, который предал отряд соратников ради божественного могущества.
             </p>
         </article>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Публикация и информация</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Автор / Художник</div>
+                    <div style="font-size: 14px; font-weight: 700;">Кентаро Миура</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Издатель</div>
+                    <div style="font-size: 14px; font-weight: 700;">Young Animal (Hakusensha)</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Начало</div>
+                    <div style="font-size: 14px; font-weight: 700;">Август 1989</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 4px;">Жанры</div>
+                    <div style="font-size: 14px; font-weight: 700;">Тёмное фэнтези, Боевик</div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">О Кентаро Миуре</h2>
+            <div style="background-color: var(--surface); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant); font-size: 14px; line-height: 1.6;">
+                <p style="margin-bottom: 8px;">
+                    Кентаро Миура (1966–2021) — легендарный мангака, автор революционной манги «Берсерк». Он был известен своей невероятной способностью к рисованию и детализации, порой тратя по 16+ часов в день на создание каждой главы. Его работа оказала огромное влияние на индустрию манги и аниме.
+                </p>
+                <p style="color: var(--text-muted); font-size: 13px;">
+                    К сожалению, Кентаро Миура скончался 6 мая 2021 года, оставив наследие, которое продолжает вдохновлять миллионы поклонников по всему миру. Его жизнь и творчество остаются иконой преданности своему ремеслу.
+                </p>
+            </div>
+        </section>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Главные персонажи</h2>
+            <div class="chip-row">
+                <a href="character-card.html" class="chip">⚔️ Гатс (Черный Мечник)</a>
+                <a href="character-card.html" class="chip">👑 Гриффит (Белый Ястреб)</a>
+                <a href="character-card.html" class="chip">💎 Кэска (Королева)</a>
+            </div>
+        </section>
+
+        <section style="padding: 0 var(--padding); margin-top: 16px;">
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Экранизации и адаптации</h2>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; margin-bottom: 2px;">🎬 Аниме</div>
+                    <div style="font-size: 14px; font-weight: 700;">Berserk (1997), Berserk (2016-2017), Berserk: Golden Age Trilogy</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; margin-bottom: 2px;">🎮 Видеоигры</div>
+                    <div style="font-size: 14px; font-weight: 700;">Berserk and the Band of the Hawk, Dynasty Warriors series</div>
+                </div>
+                <div style="background-color: var(--surface); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--surface-variant);">
+                    <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; margin-bottom: 2px;">📊 Перевод</div>
+                    <div style="font-size: 14px; font-weight: 700;">Доступна на русском языке (издательство «Истари комикс»)</div>
+                </div>
+            </div>
+        </section>
 
         <section class="section-container" style="margin-top: 12px; margin-bottom: 30px;">
             <h2 class="section-title">Связанные страницы</h2>
