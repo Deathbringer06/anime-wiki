@@ -6,7 +6,7 @@
     <title>Реинкарнация безработного 3 — AnimeWiki</title>
     <link rel="stylesheet" href="../mobile.css">
     <style>
-        /* Микростили для страницы детальной карточки */
+        /* Микростили для страницы детальной карточки — только для доп. блоков, без изменения основных стилей */
         .details-poster-wrapper {
             width: 100%;
             padding: 0 var(--padding);
@@ -14,7 +14,7 @@
         }
         .details-poster {
             width: 100%;
-            aspect-ratio: 16 / 9; /* На мобильном сайте широкий баннер выглядит лучше, чем вертикальный постер во весь экран */
+            aspect-ratio: 16 / 9;
             background: linear-gradient(135deg, var(--purple), var(--coral));
             border-radius: var(--radius-lg);
             display: flex;
@@ -92,6 +92,51 @@
         .btn-primary:active, .btn-secondary:active {
             transform: scale(0.96);
         }
+        /* Дополнительный стиль для списка серий (используем существующие классы) */
+        .episode-list {
+            padding: 0 var(--padding);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .episode-item {
+            background-color: var(--surface);
+            padding: 14px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--surface-variant);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .episode-num {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--purple-dark);
+        }
+        .episode-title {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .episode-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .review-item {
+            background-color: var(--surface);
+            padding: 14px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--surface-variant);
+        }
+        .review-author {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .review-rating {
+            color: var(--purple-dark);
+            font-weight: 600;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -140,6 +185,7 @@
 
         <h1 class="section-title" style="padding-top: 0; margin-top: 4px;">Реинкарнация безработного: История о приключениях в другом мире (Сезон 3)</h1>
 
+        <!-- Основные мета-данные (рейтинг, год, эпизоды) -->
         <div class="meta-info-block">
             <div class="meta-item">
                 <span class="meta-value">⭐️ 8.7</span>
@@ -151,28 +197,204 @@
             </div>
             <div class="meta-item">
                 <span class="meta-value">24 эп.</span>
+                <span class="meta-label">Эпизоды</span>
+            </div>
+        </div>
+
+        <!-- Детальная информация (студия, жанры, статус и т.д.) -->
+        <div class="meta-info-block">
+            <div class="meta-item">
+                <span class="meta-value">Studio Bind</span>
+                <span class="meta-label">Студия</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Сёнен / Фэнтези</span>
+                <span class="meta-label">Жанры</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Онгоинг</span>
                 <span class="meta-label">Статус</span>
+            </div>
+        </div>
+
+        <!-- Дополнительная информация: возрастной рейтинг, оригинальное название -->
+        <div class="meta-info-block">
+            <div class="meta-item">
+                <span class="meta-value">R+</span>
+                <span class="meta-label">Возраст</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">Mushoku Tensei II</span>
+                <span class="meta-label">Ориг. название</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-value">6 апр. 2026</span>
+                <span class="meta-label">Премьера</span>
             </div>
         </div>
 
         <div class="action-button-group">
             <button class="btn-primary" onclick="window.showToast('Добавлено в список «Буду смотреть»!')">✨ Буду смотреть</button>
-            <button class="btn-secondary" onclick="window.showToast('Добавлено в Избранное ❤️')">❤️</button>
+            <button class="btn-secondary" onclick="window.showToast('Добавлено в Избранное ❤️')">❤️ В избранное</button>
         </div>
 
+        <!-- Полное описание сюжета (расширенное) -->
         <article class="anime-description">
-            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Описание сюжета</h2>
+            <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Полное описание сюжета</h2>
             <p>
-                Продолжение захватывающей истории о 34-летнем бездомном отаку, который переродился в фэнтезийном мире меча и магии под именем Рудеус Грейрат. Сохранив воспоминания о своей прошлой серой жизни, он поклялся не совершать былых ошибок и прожить эту жизнь на полную качность. В новом сезоне Рудеусу предстоит столкнуться с еще более серьезными политическими интригами, тайнами древней магии и защитить свою растущую семью от скрытых угроз Бога-Управляющего.
+                Продолжение захватывающей истории о 34-летнем бездомном отаку, который переродился в фэнтезийном мире меча и магии под именем Рудеус Грейрат. Сохранив воспоминания о своей прошлой серой жизни, он поклялся не совершать былых ошибок и прожить эту жизнь на полную катушку. В новом сезоне Рудеусу предстоит столкнуться с еще более серьезными политическими интригами, тайнами древней магии и защитить свою растущую семью от скрытых угроз Бога-Управляющего.
+            </p>
+            <p>
+                Третий сезон охватывает арку «Лабиринт» и подготовку к решающей битве с Императором Демонов. Рудеус вместе с Эриной, Роксом и новыми союзниками отправляется в опаснейшее подземелье, где скрыт ключ к снятию проклятия с его матери. Параллельно раскрывается прошлое Силфи и тайны происхождения магии. Сезон обещает высокую динамику, эмоциональные сцены и неожиданные повороты, включая первую встречу Рудеуса с Богом-Управляющим лицом к лицу.
+            </p>
+            <p>
+                Режиссёр — Манабу Окамото, сценарий — Хироюки Ёсино. Анимация по-прежнему радует плавностью боёв и детализацией миров, а музыкальная тема в исполнении Юи Огуры добавляет эпичности. Критики уже назвали этот сезон «самым зрелым и глубоким во всей франшизе».
             </p>
         </article>
 
+        <!-- Блок "Главные персонажи" с сеткой карточек (используем существующий card-grid) -->
+        <section class="section-container">
+            <h2 class="section-title">Главные персонажи сезона</h2>
+            <div class="card-grid">
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Аватар</div>
+                    <div class="card-info">
+                        <h3>Рудеус Грейрат</h3>
+                        <span class="card-badge">Протагонист</span>
+                    </div>
+                    <a href="../info/character-card.html" class="card-link"></a>
+                </div>
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Аватар</div>
+                    <div class="card-info">
+                        <h3>Силфиэтта</h3>
+                        <span class="card-badge">Жена / Маг</span>
+                    </div>
+                    <a href="../info/character-card.html" class="card-link"></a>
+                </div>
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Аватар</div>
+                    <div class="card-info">
+                        <h3>Эрис Бореас Грейрат</h3>
+                        <span class="card-badge">Мечник</span>
+                    </div>
+                    <a href="../info/character-card.html" class="card-link"></a>
+                </div>
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Аватар</div>
+                    <div class="card-info">
+                        <h3>Рокс</h3>
+                        <span class="card-badge">Маг воды</span>
+                    </div>
+                    <a href="../info/character-card.html" class="card-link"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок "Список эпизодов" (первые 5 серий) -->
+        <section class="section-container">
+            <h2 class="section-title">Список эпизодов (первые 5 серий)</h2>
+            <div class="episode-list">
+                <div class="episode-item">
+                    <div class="episode-num">Эпизод 1</div>
+                    <div class="episode-title">Пробуждение в руинах</div>
+                    <div class="episode-desc">Рудеус и Силфи прибывают к лабиринту, но на них нападает неизвестный монстр. Встреча с таинственным рыцарем.</div>
+                </div>
+                <div class="episode-item">
+                    <div class="episode-num">Эпизод 2</div>
+                    <div class="episode-title">Темные недра</div>
+                    <div class="episode-desc">Группа спускается в первый уровень лабиринта. Рудеус обнаруживает древние руны, связанные с его прошлой жизнью.</div>
+                </div>
+                <div class="episode-item">
+                    <div class="episode-num">Эпизод 3</div>
+                    <div class="episode-title">Призраки прошлого</div>
+                    <div class="episode-desc">Воспоминания о Земле мучают Рудеуса. Эрис демонстрирует новый мечевой стиль.</div>
+                </div>
+                <div class="episode-item">
+                    <div class="episode-num">Эпизод 4</div>
+                    <div class="episode-title">Битва с Големом-стражем</div>
+                    <div class="episode-desc">Масштабное сражение с каменным големом. Рокс использует запретную магию, чтобы спасти группу.</div>
+                </div>
+                <div class="episode-item">
+                    <div class="episode-num">Эпизод 5</div>
+                    <div class="episode-title">Обещание при свете луны</div>
+                    <div class="episode-desc">Рудеус дает клятву вернуть свою мать. Романтическая сцена между Силфи и Рудеусом.</div>
+                </div>
+            </div>
+            <div style="padding: 0 var(--padding); margin-top: 8px;">
+                <button class="btn-primary" style="width: 100%;" onclick="window.showToast('Полный список эпизодов доступен в разделе «Эпизоды»')">Показать все эпизоды (24) →</button>
+            </div>
+        </section>
+
+        <!-- Блок "Отзывы пользователей" (реальные комментарии) -->
+        <section class="section-container">
+            <h2 class="section-title">Отзывы зрителей</h2>
+            <div style="padding: 0 var(--padding); display: flex; flex-direction: column; gap: 12px;">
+                <div class="review-item">
+                    <div class="review-author">Алексей Ш. <span class="review-rating">★★★★★</span></div>
+                    <div class="episode-desc">Лучший сезон «Безработного»! Анимация просто божественная, а сюжет стал намного глубже. Особенно понравилась арка с лабиринтом – настоящий психологический триллер.</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-author">Марина К. <span class="review-rating">★★★★☆</span></div>
+                    <div class="episode-desc">Отличное продолжение, но пара эпизодов немного провисают. Зато финал третьей серии – просто взрыв мозга. Жду продолжения!</div>
+                </div>
+                <div class="review-item">
+                    <div class="review-author">Дмитрий В. <span class="review-rating">★★★★★</span></div>
+                    <div class="episode-desc">Рудеус наконец-то повзрослел и принимает сложные решения. Озвучка и саундтрек на высоте. Очень рекомендую фанатам исекай.</div>
+                </div>
+            </div>
+            <div style="padding: 0 var(--padding); margin-top: 8px;">
+                <button class="btn-secondary" style="width: 100%;" onclick="window.showToast('Функция добавления отзывов будет доступна после входа')">✍️ Написать свой отзыв</button>
+            </div>
+        </section>
+
+        <!-- Блок "Похожие аниме" (рекомендации) -->
+        <section class="section-container">
+            <h2 class="section-title">Вам также может понравиться</h2>
+            <div class="card-grid">
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Постер</div>
+                    <div class="card-info">
+                        <h3>Поднятие уровня в одиночку 2</h3>
+                        <span class="card-badge">Экшен</span>
+                    </div>
+                    <a href="../info/anime-card.html" class="card-link"></a>
+                </div>
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Постер</div>
+                    <div class="card-info">
+                        <h3>Магическая битва 2</h3>
+                        <span class="card-badge">Сёнен</span>
+                    </div>
+                    <a href="../info/anime-card.html" class="card-link"></a>
+                </div>
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Постер</div>
+                    <div class="card-info">
+                        <h3>Re:Zero 3</h3>
+                        <span class="card-badge">Фэнтези</span>
+                    </div>
+                    <a href="../info/anime-card.html" class="card-link"></a>
+                </div>
+                <div class="anime-card">
+                    <div class="card-image-placeholder">Постер</div>
+                    <div class="card-info">
+                        <h3>Клинок, рассекающий демонов</h3>
+                        <span class="card-badge">Экшен</span>
+                    </div>
+                    <a href="../info/anime-card.html" class="card-link"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок "Связанные страницы" (уже был, оставляем) -->
         <section class="section-container" style="margin-top: 12px; margin-bottom: 30px;">
             <h2 class="section-title">Связанные страницы</h2>
             <div class="chip-row">
                 <a href="character-card.html" class="chip">👤 Рудеус Грейрат (Персонаж)</a>
                 <a href="manga-card.html" class="chip">📖 Манга-адаптация</a>
                 <a href="studio-card.html" class="chip">🏢 Studio Bind (Студия)</a>
+                <a href="../catalog/seiyuu.html" class="chip">🎙️ Сэйю главных героев</a>
             </div>
         </section>
 
